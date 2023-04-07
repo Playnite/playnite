@@ -31,6 +31,7 @@ public class TestsSetupClass
         //ResourceProvider.SetGlobalProvider(TestResourceProvider.Instance);
         //Assert.AreEqual("Filters", ResourceProvider.GetString(LOC.Filters));
 
+        Localization.SetLanguage("en_US", false);
         SyncContext.SetMainContext(new TestSynchronizationContext());
         AppConfig.Config.ThrowAllErrors = true;
     }

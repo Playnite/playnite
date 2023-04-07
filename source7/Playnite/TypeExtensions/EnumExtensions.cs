@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using Playnite;
+using System.ComponentModel;
 
 namespace System;
 
@@ -25,14 +26,13 @@ public static class EnumExtensions
         if (attributes != null && attributes.Length > 0)
         {
             var desc = attributes[0].Description;
-            if (desc.StartsWith("LOC", StringComparison.Ordinal))
+            if (Loc.IsStringId(desc))
             {
-                throw new NotImplementedException();
-                //return ResourceProvider.GetString(desc);
+                return Loc.GetString(desc);
             }
             else
             {
-                return attributes[0].Description;
+                return desc;
             }
         }
         else

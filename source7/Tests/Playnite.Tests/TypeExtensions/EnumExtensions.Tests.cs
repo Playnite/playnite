@@ -2,7 +2,7 @@
 
 public enum TestEnum
 {
-    [System.ComponentModel.Description("desc1")]
+    [System.ComponentModel.Description(Loc.dock_left_id)]
     Test1,
     Test2
 }
@@ -11,9 +11,9 @@ public enum TestEnum
 public class EnumsTests
 {
     [Test]
-    public void Test()
+    public void GetDescriptionTest()
     {
-        Assert.AreEqual("desc1", TestEnum.Test1.GetDescription());
+        Assert.AreEqual("Left", TestEnum.Test1.GetDescription());
         Assert.AreEqual("Test2", TestEnum.Test2.GetDescription());
     }
 }
