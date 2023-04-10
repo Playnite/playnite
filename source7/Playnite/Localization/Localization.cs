@@ -53,12 +53,43 @@ public static partial class Loc
         return id;
     }
 
-    public static string GetString(string id, params (string name, IFluentType value)[] args)
+    public static string GetString(string id, params (string name, object value)[] args)
     {
         var newArgs = new Dictionary<string, IFluentType>();
         foreach (var (name, value) in args)
         {
-            newArgs.Add(name, value);
+            if (value is int intValue)
+            {
+                newArgs.Add(name, (FluentNumber)intValue);
+            }
+            else if (value is uint uintValue)
+            {
+                newArgs.Add(name, (FluentNumber)uintValue);
+            }
+            else if (value is long longValue)
+            {
+                newArgs.Add(name, (FluentNumber)longValue);
+            }
+            else if (value is ulong ulongValue)
+            {
+                newArgs.Add(name, (FluentNumber)ulongValue);
+            }
+            else if (value is float floatValue)
+            {
+                newArgs.Add(name, (FluentNumber)floatValue);
+            }
+            else if (value is double doubleValue)
+            {
+                newArgs.Add(name, (FluentNumber)doubleValue);
+            }
+            else if (value is string strValue)
+            {
+                newArgs.Add(name, (FluentString)strValue);
+            }
+            else
+            {
+                newArgs.Add(name, (FluentString)(value.ToString() ?? "uknown"));
+            }
         }
 
         if (fluentBundle?.TryGetMessage(id, newArgs, out _, out var message) == true)
@@ -72,41 +103,6 @@ public static partial class Loc
     public static bool IsStringId(string id)
     {
         return stringIds.Contains(id);
-    }
-
-    public static FluentString ToFluentString(this string source)
-    {
-        return (FluentString)source;
-    }
-
-    public static FluentNumber ToFluentNumber(this int source)
-    {
-        return (FluentNumber)source;
-    }
-
-    public static FluentNumber ToFluentNumber(this uint source)
-    {
-        return (FluentNumber)source;
-    }
-
-    public static FluentNumber ToFluentNumber(this long source)
-    {
-        return (FluentNumber)source;
-    }
-
-    public static FluentNumber ToFluentNumber(this ulong source)
-    {
-        return (FluentNumber)source;
-    }
-
-    public static FluentNumber ToFluentNumber(this float source)
-    {
-        return (FluentNumber)source;
-    }
-
-    public static FluentNumber ToFluentNumber(this double source)
-    {
-        return (FluentNumber)source;
     }
 }
 

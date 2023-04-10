@@ -7,9 +7,14 @@ public class LocalizationsTests
     public void LocalizationTest()
     {
         Assert.AreEqual("Filter Active", Loc.filter_active_label());
-        Assert.AreEqual("10h 5m", Loc.played_hours(10.ToFluentNumber(), 5.ToFluentNumber()));
-        Assert.AreEqual("aaah bbbm", Loc.played_hours("aaa".ToFluentString(), "bbb".ToFluentString()));
-        Assert.AreEqual("aaah 5m", Loc.played_hours("aaa".ToFluentString(), 5.ToFluentNumber()));
+        Assert.AreEqual("10h 5m", Loc.played_hours((int)10, (int)5));
+        Assert.AreEqual("10h 5m", Loc.played_hours((uint)10, (uint)5));
+        Assert.AreEqual("10h 5m", Loc.played_hours((long)10, (long)5));
+        Assert.AreEqual("10h 5m", Loc.played_hours((ulong)10, (ulong)5));
+        Assert.AreEqual("10h 5m", Loc.played_hours((float)10, (float)5));
+        Assert.AreEqual("10h 5m", Loc.played_hours((double)10, (double)5));
+        Assert.AreEqual("10h 5m", Loc.played_hours((decimal)10, (decimal)5));
+        Assert.AreEqual("10h 5m", Loc.played_hours("10", "5"));
     }
 }
     

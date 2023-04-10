@@ -3,7 +3,7 @@ language-settings-label = Playnite language
 exit-app-label = Exit
 filter-active-label = Filter Active
 filter-inactive-label = Filter Disabled
-aditional-filters = Additional filters
+additional-filters = Additional filters
 filters = Filters
 filter = Filter
 invalid-data-title = Invalid Data
@@ -33,14 +33,14 @@ crash-description =
     
     Thank you for your help.
 ext-crash-description = 
-    Extension "{$var0}" caused an unrecoverable error.
+    Extension "{$name}" caused an unrecoverable error.
     
     We recommend saving the log file and reporting the issue to extension's developer. If the issue keeps reoccurring, disable the extension.
 ext-crash-description-fs = 
-    Extension "{$var0}" caused an unrecoverable error.
+    Extension "{$name}" caused an unrecoverable error.
     
     We recommend reporting the issue to extension's developer. If the issue keeps reoccurring, disable the extension.
-ext-crash-description-uknown = 
+ext-crash-description-unknown = 
     Unknown extension or a theme caused an unrecoverable error.
     
     We recommend disabling 3rd party add-ons, isolating the problematic one and reporting the issue to add-on's developer.
@@ -62,36 +62,39 @@ game-remove-ask-title = Remove Game(s)?
 game-remove-running-error = Cannot remove - Game or installer is running.
 game-uninstall-running-error = Cannot uninstall - Game is running.
 game-remove-ask-message = 
-    Are you sure you want to remove {$var0}?
+    Are you sure you want to remove {$gameName}?
 games-remove-ask-message = 
-    Are you sure you want to remove {$var0} games?
+    Are you sure you want to remove {$gameCount} games?
 game-remove-ask-message-ignore-option = 
-    Are you sure you want to remove {$var0}?
+    Are you sure you want to remove {$gameName}?
     
     Selecting "add to exclusion list" option will prevent game from being imported again next time library is updated.
 games-remove-ask-message-ignore-option = 
-    Are you sure you want to remove {$var0} games?
+    Are you sure you want to remove {$gameCount} games?
     
     Selecting "add to exclusion list" option will prevent games from being imported again next time library is updated.
-remove-unused-fields-ask-message = Are you sure you want to remove {$var0} entries that are currently not in use?
+remove-unused-fields-ask-message = Are you sure you want to remove {$entryCount} entries that are currently not in use?
 remove-unused-fields-no-unused-message = No unused fields found.
-remove-ask-add-to-exlusion-list-yes-response = Yes (add to exclusion list)
+remove-ask-add-to-exclusion-list-yes-response = Yes (add to exclusion list)
 game-edit-change-notif = There are unsaved changes in this section
-dbupgrade-progress = Updating game library format…
-dbupgrade-fail = Database update failed.
-dbupgrade-empty-space-fail = Cannot update game library. {$var0} MBs of free space is required.
+db-upgrade-progress = Updating game library format…
+db-upgrade-fail = Database update failed.
+db-upgrade-empty-space-fail = Cannot update game library. {$megaBytes} MBs of free space is required.
 game-error = GameError
-game-start-error-no-game = Cannot start game. '{$var0}' was not found in database.
-game-start-error = Cannot start game: {$var0}
-game-start-action-error = Cannot start action: {$var0}
-game-open-location-error = Cannot open game location: {$var0}
-calculate-game-size-error = Could not detect game install size: {$var0}
+game-start-error-no-game = Cannot start game. '{$gameId}' was not found in database.
+game-start-error = Cannot start game.
+game-start-action-error = Cannot start action.
+game-open-location-error = Cannot open game location.
+calculate-game-size-error = Could not detect game install size.
 calculate-game-size-error-caption = Install size scan error
-calculate-games-size-error-message = There were {$var0} errors during install size scan
-game-shortcut-error = Failed to create shortcut: {$var0}
-manual-open-error = Failed to open manual: {$var0}
-game-install-error = Cannot install game: {$var0}
-game-uninstall-error = Cannot un-install game: {$var0}
+calculate-games-size-error-message = {$errorCount ->
+    [one] There was an issue during install size scan
+   *[other] There were {$errorCount} errors during install size scan
+}
+game-shortcut-error = Failed to create shortcut.
+manual-open-error = Failed to open manual.
+game-install-error = Cannot install game.
+game-uninstall-error = Cannot un-install game.
 error-no-play-action = No valid game startup actions found. When using emulator actions, make sure platform definitions match between the game and emulator configuration.
 error-no-install-action = Installation implementation is not available.
 error-library-plugin-not-found = The library plugin responsible for this game is disabled or not installed.
@@ -140,7 +143,7 @@ modified-label = Modified
 date-modified-label = Date Modified
 website-label = Website
 path-label = Path
-oklabel = OK
+ok-label = OK
 save-label = Save
 close-label = Close
 cancel-label = Cancel
@@ -172,7 +175,7 @@ covers-label = Covers
 grid-view-label = Grid View
 details-view-label = Details View
 custom-label = Custom
-urllabel = URL
+url-label = URL
 patrons-label = Patrons
 license-label = License
 contributors-label = Contributors
@@ -222,8 +225,8 @@ meta-description-fields = Please select which fields should be automatically pop
 meta-igdb-contrib-notif = Please consider clicking on the logo above and contribute updates to igdb.com database in order to improve data Playnite uses.
 progress-metadata = Downloading metadata…
 progress-installed-games = Importing installed games…
-progress-importin-games = Importing {$var0} games…
-progress-importin-emulated-games = Importing emulated games from {$var0}…
+progress-importing-games = Importing {$libraryName} games…
+progress-importing-emulated-games = Importing emulated games from {$scannerName}…
 progress-library-games = Downloading library updates…
 progress-scanning-games-install-size = Scanning size of games in library…
 progress-scanning-imported-games-install-size = Scanning size of imported games…
@@ -254,7 +257,7 @@ menu-open-fullscreen = Switch to Fullscreen Mode
 menu-links-title = Links
 menu-help-title = Help
 menu-patreon-support = Support on Patreon
-sdkdocumentation = SDK Documentation
+sdk-documentation = SDK Documentation
 menu-restart-system = Restart System
 menu-shutdown-system = Turn Off System
 menu-suspend-system = Suspend System
@@ -264,9 +267,9 @@ settings-details-panel-items = Game fields to be displayed on details panel:
 settings-grid-item-spacing = Item spacing
 settings-grid-item-draw-background = Draw grid item background
 settings-grid-item-cover-margin = Grid item border width
-settings-defaul-icon-source = Missing game icon source
-settings-defaul-cover-source = Missing game cover source
-settings-defaul-background-source = Missing game background source
+settings-default-icon-source = Missing game icon source
+settings-default-cover-source = Missing game cover source
+settings-default-background-source = Missing game background source
 settings-indent-game-details = Vertical spacing to game details
 settings-grid-view-details-position = Grid view details position
 settings-details-game-list-position = Details view game list position
@@ -280,7 +283,7 @@ settings-explorer-panel-position = Explorer panel position
 settings-cover-art-rendering-label = Cover art rendering
 settings-target-aspect-ratio-label = Target aspect ratio
 settings-grid-tile-layout-fsnote = Following options also affect tile rendering in Fullscreen mode!
-settings-strech-mode-label = Stretch mode
+settings-stretch-mode-label = Stretch mode
 settings-covert-aspect-dvd = DVD Box
 settings-covert-aspect-epic-games-store = Epic Games Store
 settings-covert-aspect-gog-galaxy2 = GOG Galaxy 2.0
@@ -307,7 +310,7 @@ settings-backup = Backup
 menu-backup-data = Backup Library Data
 menu-restore-backup = Restore Data Backup
 settings-import-label = Import changes in library automatically
-settings-invalid-dblocation = Invalid database file location, proper file path must be set.
+settings-invalid-db-location = Invalid database file location, proper file path must be set.
 settings-invalid-account-name = Account name cannot be empty.
 settings-download-metadata-on-import = Download metadata after importing games
 settings-start-minimized = Launch Playnite minimized
@@ -327,17 +330,17 @@ settings-disable-acceleration = Disable hardware acceleration
 settings-disable-acceleration-tooltip = Use when experiencing stuttering or similar UI issues
 settings-hidden-in-quick-launch = Show hidden games in quick launch lists
 settings-hidden-in-quick-launch-tooltip = Affects Jump List and tray menu lists.
-settings-quic-launch-items = Number of quick launch items
+settings-quick-launch-items = Number of quick launch items
 settings-show-background-window-image = Use game background image as window background
-settings-blur-window-backgroun-image = Blur background
+settings-blur-window-background-image = Blur background
 settings-blur-high-quality = High Quality
-settings-darken-window-backghroun-image = Darken background
+settings-darken-window-background-image = Darken background
 settings-show-back-image-on-grid-view = Show on Grid view
 settings-skin = Theme
 settings-skin-color = Theme Profile
 settings-skin-fullscreen = Fullscreen Theme
 settings-skin-color-fullscreen = Fullscreen Theme Profile
-settings-dblocation = Database Location
+settings-db-location = Database Location
 settings-login-status = Login status:
 settings-window-title = Playnite Settings
 settings-clear-web-cache = Clear web cache
@@ -362,7 +365,7 @@ settings-restart-ask-message =
     
     Restarting will cancel any active tasks (downloads) currently in progress.
 settings-restart-title = Restart Playnite?
-settings-dbpath-notification = 
+settings-db-path-notification = 
     Playnite cannot move your library files automatically. You must manually move/copy the files before changing the location. If there is no library in the target location, a new one will be created.
     
     The new database location will not be used until Playnite is restarted.
@@ -428,17 +431,17 @@ open-directory-command = Folder open command
 settings-preferred-age-rating-org = Preferred age rating organization
 settings-scan-lib-install-size-on-lib-update = Update install size of games on library update
 settings-scan-lib-install-size-on-lib-update-tooltip = Scans and updates the install size of games if it is detected that their files have been modified since the last scan
-strech-none = None
-strech-fill = Fill
-strech-uniform = Uniform
-strech-uniform-to-fill = Uniform to fill
+stretch-none = None
+stretch-fill = Fill
+stretch-uniform = Uniform
+stretch-uniform-to-fill = Uniform to fill
 dock-left = Left
 dock-right = Right
 dock-top = Top
 dock-bottom = Bottom
 import-error = Import Error
-login-required = Authentification required
-login-failed = Authentification failed
+login-required = Authentication required
+login-failed = Authentication failed
 settings-alt-web-view-rendering = Alternative web view rendering mode
 settings-alt-web-view-rendering-tooltip = Use when experiencing issues with web views, for example integration authentication dialogs.
 settings-partial-description-loading = Partial loading of large game descriptions
@@ -464,7 +467,7 @@ emu-wizard-button-select-files = Select files
 emu-wizard-button-scan-emulator = Autodetect From Folder…
 emu-wizard-button-configure-emulator = Configure Emulators…
 emu-wizard-scanning = Scanning…
-emu-wizard-scanning-specific = Scanning {$var0}…
+emu-wizard-scanning-specific = Scanning {$path}…
 first-window-title = First Time Configuration
 first-intro = 
     This process will guide you through an automatic import and configuration of external game libraries. Playnite can automatically import games from multiple game services, such as Steam or GOG.
@@ -482,7 +485,7 @@ first-plugin-download-error =
     Failed to download one or more extensions.
     
     You can try to re-download integrations from add-ons menu after first run wizard finishes.
-first-downloading-addon = Downloading {$var0} integration…
+first-downloading-addon = Downloading {$integrationName} integration…
 default-addon-list-download = Downloading list of recommended integrations…
 default-addon-list-download-error = Failed to download list of recommended integrations. You can try and re-download integrations later via the Addons menu.
 platforms-window-title = Configure Platforms and Emulators
@@ -511,18 +514,18 @@ import-emulators-button = Import Emulators…
 download-emulators-button = Download Emulators…
 emu-load-args-preset-tooltip = Load arguments preset from known emulator profile
 emu-removal-confirmation = 
-    Are you sure you want to remove {$var0} emulator?
-    It's currently being used by {$var1} game(s).
+    Are you sure you want to remove {$emulatorName} emulator?
+    It's currently being used by {$gameCount} game(s).
 platform-removal-confirmation = 
-    Are you sure you want to remove {$var0} platform?
-    It's currently being used by {$var1} game(s) and {$var2} emulator(s).
+    Are you sure you want to remove {$platformName} platform?
+    It's currently being used by {$gamesCount} game(s) and {$emulatorsCount} emulator(s).
 emulator-settings-help = Settings help
 menu-sort-by-title = Sort By
 menu-sort-by-direction = Sort Direction
 menu-group-by-title = Group By
 menu-sort-ascending = Ascending
 menu-sort-descending = Descending
-menu-group-dont = Don't group
+menu-group-no-group = Don't group
 menu-group-provider = Group by Library
 menu-group-category = Group by Category
 menu-group-platform = Group by Platform
@@ -567,7 +570,7 @@ game-description-title = Description
 game-install-dir-title = Installation Folder
 game-cover-title = Cover Image
 game-links-title = Links
-game-romtitle = Image, ROM or ISO Path
+game-rom-title = Image, ROM or ISO Path
 genre-label = Genre
 genres-label = Genres
 company-label = Company
@@ -589,25 +592,21 @@ regions-label = Regions
 source-label = Source
 sources-label = Sources
 recent-activity-label = Recent Activity
-database-erro-title = Database Error
+database-error-title = Database Error
 database-open-error = Failed to open library database.
 database-not-opened-error = Database is not opened.
-database-open-access-error = Cannot access library database. File "{$var0}" is being used by another process or it's in inaccessible location.
+database-open-access-error = Cannot access library database. File "{$path}" is being used by another process or it's in inaccessible location.
 diag-package-creation-error = Failed to create diagnostics package.
 diag-package-upload-error = Failed to automatically upload diagnostics package.
 diag-package-sent-success = Diagnostics information was sent successfully.
 diag-package-creation-success = 
     The diagnostics package has been created and submitted successfully.
     Please attach the following ID to your issue report:
-library-import-error = Failed to import games from {$var0}.
-library-import-emulated-error = Failed to import emulated games from {$var0}.
+library-import-error = Failed to import games from {$libraryName}.
+library-import-emulated-error = Failed to import emulated games from {$scannerName}.
 scan-emulator-games-empty-profile-error = Cannot search for games by selected emulator profile. Profile doesn't contain any file extensions or platforms.
 start-generic-error = Playnite failed to start. Please close all other instances and try again.
-skin-apply-error = 
-    Failed to apply theme "{$var0}", color profile "{$var1}"
-    
-    {$var2}
-urlformat-error = Cannot open link, URL is not in valid format.
+url-format-error = Cannot open link, URL is not in valid format.
 app-startup-error = Failed to start the application.
 cef-sharp-init-error = 
     Failed to initialize web view component. Playnite cannot continue with startup process.
@@ -636,14 +635,14 @@ empty-game-name-error = Game name cannot be empty.
 empty-tracking-folder-error = Game action tracking directory cannot be empty.
 empty-game-name-meta-search-error = Game name cannot be empty before searching metadata.
 invalid-game-data = Invalid game data
-urlinput-info = Enter valid web URL starting with http:// or https://
-urlinput-info-titile = Select URL
-metadata-download-error = Failed to download metadata: {$var0}
+url-input-info = Enter valid web URL starting with http:// or https://
+url-input-info-title = Select URL
+metadata-download-error = Failed to download metadata.
 download-error = Download Error
 clear-filters = Clear Filters
 private-account = Private Account
 public-account = Public Account
-apikey = API Key
+api-key = API Key
 startup-error = Startup Error
 skin-error = Theme Error
 clear-all = Clear All
@@ -718,7 +717,7 @@ custom-arguments = Custom Arguments
 additional-emulator-arguments = Additional Emulator Arguments
 override-emulator-arguments = Override Emulator Arguments
 is-play-action = Play action
-medata-diff-window-title = Select metadata to import
+metadata-diff-window-title = Select metadata to import
 game-import-window-title = Select Games to Import
 meta-lookup-window-title = Metadata search
 updater-window-title = Update Available
@@ -779,10 +778,9 @@ open-game-manual = Open Manual
 more-action = More
 play-action-use-plugin = Managed by the library plugin
 play-action-use-plugin-tooltip = The game starting process will be managed by the library plugin responsible for this game.
-metadownload-no-results-message = No relevant information about the '{$var0}' game has been found on the specified page.
-metadownload-single-game-tip = Tip: You can use more advanced metadata download process while editing single game via "Edit" menu option.
-progreess-availability-message = Not available when some action is in progress.
-description-htmlsupport-tooltip = Description text is HTML syntax sensitive
+meta-download-single-game-tip = Tip: You can use more advanced metadata download process while editing single game via "Edit" menu option.
+progress-availability-message = Not available when some action is in progress.
+description-html-support-tooltip = Description text is HTML syntax sensitive
 description-playtime-seconds = Game time is recorded in seconds.
 description-size-bytes = Install size is indicated in bytes.
 release-date-tooltip = Release date must be set in 'year-month-day' format. Month and Day values can be omitted.
@@ -794,16 +792,16 @@ cancel-monitoring-setup-ask = Installation monitoring is currently running. Do y
 cancel-monitoring-execution-ask = Game execution monitoring is currently running. Do you want to cancel the process and return the game to the previous state?
 time-played = Time Played
 last-played = Last Played
-played-days = {$var0}d {$var1}h {$var2}m
-played-hours = {$var0}h {$var1}m
-played-minutes = {$var0} minutes
-played-seconds = {$var0} seconds
+played-days = {$days}d {$hours}h {$minutes}m
+played-hours = {$hours}h {$minutes}m
+played-minutes = {$minutes} minutes
+played-seconds = {$seconds} seconds
 played-none = Not Played
 opening-desktop-mode-message = Opening Desktop mode…
 opening-fullscreen-mode-message = Opening Fullscreen mode…
 opening-database = Loading game library…
 calculating-install-size-message = Calculating install size…
-calculating-install-size-of-game-message = Calculating install size of {$var0}…
+calculating-install-size-of-game-message = Calculating install size of {$gameName}…
 script-install-fail = Failed to install script file.
 script-install-success = Script installed successfully.
 install-script = Install Script
@@ -812,8 +810,8 @@ script-execution-error = Failed to execute extension function.
 open-metadata-folder = Open metadata folder
 install-size-calculate = Calculate
 install-size-calculate-edit-button-tooltip = Automatically calculates the install size using the ROMs if the game has any or the installation directory if it has been set
-client-not-installed-error = {$var0} client is not installed.
-sign-in-external-notif = {$var0} client will now open. Please sign in and then close this message.
+client-not-installed-error = {$clientName} client is not installed.
+sign-in-external-notif = {$clientName} client will now open. Please sign in and then close this message.
 sign-in-external-wait-message = Waiting for user to sign in, please close this when you're done…
 install-dir-not-found-error = Game's installation folder not found.
 invalid-game-action-settings = Invalid game action configuration.
@@ -832,61 +830,55 @@ playtime1000plus = Over 1000 hours
 ext-installation-restart-notif = Playnite must be restarted to complete the installation. Do you want to restart now?
 general-extension-package-error = Extension is not packaged properly.
 general-theme-package-error = Theme is not packaged properly.
-specific-extension-load-error = Extension "{$var0}" failed to load properly.
-specific-extension-load-sdkerror = Can't load "{$var0}" extension, current Playnite version is not supported.
-specific-theme-load-error = Theme "{$var0}" failed to load properly.
-specific-theme-load-sdkerror = Can't load "{$var0}" theme, current Playnite version is not supported.
+specific-extension-load-error = Extension "{$extensionName}" failed to load properly.
+specific-extension-load-sdk-error = Can't load "{$extensionName}" extension, current Playnite version is not supported.
+specific-theme-load-error = Theme "{$themeName}" failed to load properly.
+specific-theme-load-sdk-error = Can't load "{$themeName}" theme, current Playnite version is not supported.
 general-extension-load-error = Extension failed to load properly.
 general-theme-load-error = Theme failed to load properly.
 general-extension-install-api-version-fails = Theme/Extension is using unsupported API version.
 general-extension-install-success = Installation was successful.
 general-extension-install-title = Install add-on?
 extension-generic = Generic
-addon-install-faild = Failed to install "{$var0}" add-on.
-extension-install-fail = 
-    Failed to install extension.
-    
-    {$var0}
+addon-install-failed = Failed to install "{$addonName}" add-on.
+extension-install-fail =  Failed to install extension.
 extension-install-prompt = 
     Do you want to install a new extension?
     
-    {$var0}
-    By {$var1}
-    Version {$var2}
+    {$name}
+    By {$author}
+    Version {$version}
 extension-update-prompt = 
-    Do you want to update "{$var0}" extension?
+    Do you want to update "{$name}" extension?
     
-    Current version: {$var1}
-    New version: {$var2}
-theme-install-fail = 
-    Failed to install theme.
-    
-    {$var0}
+    Current version: {$currentVersion}
+    New version: {$newVersion}
+theme-install-fail =  Failed to install theme.
 theme-install-prompt = 
     Do you want to install a new theme?
     
-    {$var0}
-    By {$var1}
-    Version {$var2}
+    {$name}
+    By {$author}
+    Version {$version}
 theme-update-prompt = 
-    Do you want to update "{$var0}" theme?
+    Do you want to update "{$name}" theme?
     
-    Current version: {$var1}
-    New version: {$var2}
+    Current version: {$currentVersion}
+    New version: {$newVersion}
 url-navigation-message = 
     You are about to leave Playnite and navigate to the following web page using your default web browser. Do you want to continue?
     
-    {$var0}
+    {$pageUrl}
 game-image-size-warning = 
     The selected image(s) might be too large for optimal performance. Using very large images can result in worse UI responsiveness and increased memory usage. 
     
     Maximum recommended resolutions:
-    Icons: {$var0} mega pixels
-    Covers: {$var1} mega pixels
-    Backgrounds: {$var2} mega pixels
+    Icons: {$iconPixels} mega pixels
+    Covers: {$coverPixels} mega pixels
+    Backgrounds: {$backgroundPixels} mega pixels
 performance-warning-title = Performance Warning
 dont-show-again-title = Don't Show Again
-incompatible-drag-and-drop-extension-error = File with extension {$var0} is not compatible.
+incompatible-drag-and-drop-extension-error = File with extension {$extensionName} is not compatible.
 incompatible-drag-and-drop-extension-error-title = Incompatible file extension
 large-media-warning-tooltip = Selected image file might be too large for optimal performance.
 theme-uninstall-question = Are you sure you want to uninstall selected theme? Uninstallation will be queued to next application start.
@@ -901,9 +893,9 @@ diag-generating = Generating diagnostics package…
 diag-uploading = Uploading diagnostics package…
 add-from-exe = Import file…
 what-is-this = What is this?
-confirumation-ask-generic = Are you sure you want to do this?
+confirmation-ask-generic = Are you sure you want to do this?
 stats-total-play-time = Total play time
-stats-avarage-play-time = Average play time
+stats-average-play-time = Average play time
 stats-top-play-time = Top play time
 stats-total-install-size = Total install size
 overview-label = Overview
@@ -916,7 +908,7 @@ settings-default-reset-desc =
     - Import exclusion list
     - Extension settings, including library integrations
         
-    Application restart is requred to finish the process. Do you want to reset settings?
+    Application restart is required to finish the process. Do you want to reset settings?
 settings-for-developers = For developers
 settings-external-extensions = External extensions
 settings-new-external-extension-box = Enter full folder path.
@@ -933,21 +925,21 @@ game-list-filtered = There are filters applied.
 game-list-extra-filtered = There are additional filters applied.
 game-list-search-results = Showing search results for:
 item-already-exists = An item with the same name already exists.
-random-game-limist-to-filter = Limit selection to current filter
+random-game-limit-to-filter = Limit selection to current filter
 random-game-pick-another = Pick another
 menu-addons = Add-ons…
 extensions-installed = Installed
 extensions-settings = Extensions settings
 extensions-browse = Browse
 extensions-updates = Updates
-extensions-updates-count = Updates ({$var0})
+extensions-updates-count = Updates ({$updatesCount})
 addons-config-move-info = Management of installed extensions and themes, including their settings, has been moved to a new "Add-ons" menu.
 libraries-config-window-description = 
     All currently installed library integration extensions can be configured here.
     
     If you want to install or uninstall additional integrations, use "Add-ons" option from main menu.
 addons-themes-desktop = Themes Desktop
-addons-themes-fullscren = Themes Fullscreen
+addons-themes-fullscreen = Themes Fullscreen
 addons-searching = Searching…
 addon-error-not-compatible = Add-on is not compatible with this version of Playnite.
 addon-error-download-failed = Failed to download add-on installation package.
@@ -959,16 +951,16 @@ addon-uninstall = Uninstall
 addon-already-installed = Already installed
 addon-no-addons-available = No new add-on updates found.
 addon-update-addons = Update add-ons
-addon-changelog-not-availavble = Changelog is not available
+addon-changelog-not-available = Changelog is not available
 addon-update-status-downloaded = Scheduled for installation
 addon-update-status-failed = Download failed
 addon-update-status-license-rejected = License rejected
-addon-downloading-addon = Downloading {$var0}…
+addon-downloading-addon = Downloading {$addonName}…
 addon-looking-for-updates = Looking for add-on updates…
 addon-updates-available = One or more add-on updates are available.
 addon-select-to-update = Select items to update
 addon-dev-reference-loaded = Extension development instance
-addon-license-window-title = {$var0} license agreement
+addon-license-window-title = {$addonName} license agreement
 license-accept = Accept
 license-decline = Decline
 include-plugin-game-actions = Include library integration play actions
@@ -1007,7 +999,7 @@ top-panel-select-random-game-button = Random game picker
 top-panel-view-select-random-game-button = Views random game selector
 top-panel-view-select-random-game-button-tooltip = Select random game from the view
 filter-preset-save-view-options = Save grouping and sorting settings
-filter-preset-show-on-fstop-panel = Show as quick filter in Fullscreen mode
+filter-preset-show-on-fs-top-panel = Show as quick filter in Fullscreen mode
 in-past7-days = In past 7 days
 in-past31-days = In past 31 days
 in-past365-days = In past 365 days
@@ -1027,27 +1019,27 @@ settings-xinput-processing-description =
             
     Disable if you use tools that translate XInput inputs to mouse/keyboards inputs and you are getting double inputs in Playnite.
 settings-show-items-main-menu-header = Show items on main menu:
-settings-swap-main-view-xabuttons = Inverted X/A main view button binding
-settings-swap-main-view-xabuttons-descriptions = Swaps button bindings for starting a game and showing game details page on main view.
-settings-swap-confirm-cancel-buttons = Swap confirmation/cancelation button binding
+settings-swap-main-view-xa-buttons = Inverted X/A main view button binding
+settings-swap-main-view-xa-buttons-descriptions = Swaps button bindings for starting a game and showing game details page on main view.
+settings-swap-confirm-cancel-buttons = Swap confirmation/cancellation button binding
 settings-swap-confirm-cancel-buttons-descriptions = Inverts A/B button bindings for confirmation and cancellation.
 settings-primary-controller-only = Primary controller only
 settings-primary-controller-only-description = Only accept inputs from primary controller when enabled.
 settings-refocus-on-guid-button = Guide button focuses Playnite
 settings-interface-volume = Interface volume
-settings-musi-volume = Background volume
+settings-music-volume = Background volume
 settings-mute-background = Mute when in background
 error-audio-interface-init = Failed to initialize audio interface.
 settings-audio-output-api = Output API
 settings-audio-output-api-description = API used for audio output. Change if you are experiencing issues with sound.
-settings-fssection-general = General
-settings-fssection-visuals = Visuals
-settings-fssection-audio = Audio
-settings-fssection-layout = Layout
-settings-fssection-menus = Menus
-settings-fssection = Input
-game-is-starting = {$var0} is starting…
-game-is-running = {$var0} is running…
+settings-fs-section-general = General
+settings-fs-section-visuals = Visuals
+settings-fs-section-audio = Audio
+settings-fs-section-layout = Layout
+settings-fs-section-menus = Menus
+settings-fs-section = Input
+game-is-starting = {$gameName} is starting…
+game-is-running = {$gameName} is running…
 text-input-capitalize = Caps
 text-input-space = Space
 settings-image-scaler-mode = Image rendering scaler
@@ -1109,7 +1101,7 @@ emu-save-scan-config = Save as auto-scan configuration
 emu-save-scan-config-tooltip = Saves configuration for later use during library update. Saved configurations can be managed via "Configure Emulators" menu.
 emu-import-with-relative-paths = Import using relative paths
 emu-import-with-relative-paths-tooltip = If possible import game files using paths relative to Playnite's installation folder or emulator's installation folder.
-emu-import-scan-subfolders = Scan subfolders
+emu-import-scan-subfolders = Scan sub-folders
 emu-import-scan-inside-archives = Scan inside archives
 emu-merge-related-files = Merge related files
 emu-merge-related-files-tooltip = Merge related game files, like individual game discs, under one game entry.
@@ -1146,22 +1138,22 @@ install-size-scan-use-size-on-disk-option-tooltip =
 warning-blacklisted-extensions = 
     Following add-on(s) have been reported as potentially problematic, either due to high stability/performance impact or security issues. We strongly recommend that you uninstall them:
             
-    {$var0}
+    {$addonNames}
 emu-exclude-online-files = Exclude online files from scan
 emu-exclude-online-files-tooltip = 
     Files stored on cloud storage won't be scanned and imported if not available locally.
     Supported only for: Google Drive, DropBox, OneDrive
 emu-use-simplified-online-file-scan = Scan but using simplified method without file content
 emu-use-simplified-online-file-scan-tooltip = Files will be imported but using less accurate method that doesn't require file content to be downloaded and present locally.
-metadat-set-all-fields-to-value = Apply to all
+metadata-set-all-fields-to-value = Apply to all
 override-install-state = Override installation state
 override-install-state-tooltip = 
     When set, Playnite will ignore installation state (including installation directory) set by the integration plugin that imports this game.
             
     This option may not fully work with plugins that use specific game import method unless they also take this override option into account.
 option-only-manually = Only manually
-option-once-aday = Once a day
-option-once-aweek = Once a week
+option-once-a-day = Once a day
+option-once-a-week = Once a week
 option-on-every-startup = On every startup
 check-program-updates = Check for program updates
 check-addon-updates = Check for add-on updates
@@ -1187,7 +1179,7 @@ search-filter-hidden = Include hidden games
 search-filter-uninstalled-included = Uninstalled games included
 search-filter-uninstalled-excluded = Uninstalled games excluded
 search-filter-hidden-included = Hidden games included
-search-filter-hiddenalled-excluded = Hidden games excluded
+search-filter-hidden-excluded = Hidden games excluded
 game-search-item-action-play = Play or Install
 game-search-item-action-switch-to = Go to details
 game-search-item-action-open-menu = Game menu
@@ -1208,10 +1200,10 @@ extension-settings-menu = Extension Settings
 exclusions = Exclusions
 emu-scanner-excluded-files = Excluded files relative to scan folder
 emu-scanner-excluded-folders = Excluded folders relative to scan folder
-emu-import-add-romexclusion-list = Add file to exclusion list
+emu-import-add-rom-exclusion-list = Add file to exclusion list
 emu-import-add-folder-exclusion-list = Add folder to exclusion list
 emu-exclusion-no-config-error = Exclusions can be only added to saved scanner configurations.
-emu-exclusion-added-message = Exclusions have been added to "{$var0}" scanner.
+emu-exclusion-added-message = Exclusions have been added to "{$scannerName}" scanner.
 emu-override-platform = Override platform
 emu-override-platform-tooltip = When set, scanner will assign this platform to all games, overwriting any automatically detected platforms.
 search-include-commands-in-default = Include commands in default search
@@ -1249,7 +1241,7 @@ settings-rotating-backups = Rotating backups
 settings-auto-backup-include-items = Include additional data:
 settings-no-backup-dir-specified-error = Backup folder needs to be set if auto backup is enabled.
 update-notify-only-patches = Show notifications for patch releases only
-update-notify-only-patches-toolip = 
+update-notify-only-patches-tooltip = 
     When enabled, only updates available for currently installed major release will result in update notification.
     New major releases will not result in update notification.
 settings-past-week-relative-format = Use relative dates for the past week
@@ -1261,7 +1253,7 @@ settings-web-image-search = Web image search
 settings-web-image-search-icon-term = Icon image search string
 settings-web-image-search-cover-term = Cover image search string
 settings-web-image-search-background = Background image search string
-gettings-addon-information = Getting add-on information…
+settings-addon-information = Getting add-on information…
 no-metadata-source = No metadata source is available
 scanner-config-play-action-settings = Play action settings
 scanner-config-play-action-settings-scanner = Use scanner settings
@@ -1275,8 +1267,7 @@ application-menu = Application menu
 game-menu = Game menu
 program-folder = Program folder
 user-data-folder = User data directory
-dbcorruption-crash-message = 
+db-corruption-crash-message = 
     Library file corruption has been detected, Playnite will now shutdown.
         
     Open new issue on Playnite's GitHub page with a request to fix corruption in your files.
-

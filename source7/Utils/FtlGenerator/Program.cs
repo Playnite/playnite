@@ -92,7 +92,7 @@ internal class Program
             if (vars?.Any() == true)
             {
                 sb.AppendLine($$"""
-                        public static string {{str.Replace('-', '_')}}({{string.Join(", ", vars.Select(a => $"IFluentType {a.Replace('-', '_')}"))}})
+                        public static string {{str.Replace('-', '_')}}({{string.Join(", ", vars.Select(a => $"object {a.Replace('-', '_')}"))}})
                         {
                             return GetString("{{str}}", {{string.Join(", ", vars.Select(a => $"(\"{a}\", {a.Replace('-', '_')})"))}});
                         }

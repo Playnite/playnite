@@ -10,7 +10,7 @@ public static partial class Loc
         "exit-app-label", 
         "filter-active-label", 
         "filter-inactive-label", 
-        "aditional-filters", 
+        "additional-filters", 
         "filters", 
         "filter", 
         "invalid-data-title", 
@@ -31,7 +31,7 @@ public static partial class Loc
         "crash-description", 
         "ext-crash-description", 
         "ext-crash-description-fs", 
-        "ext-crash-description-uknown", 
+        "ext-crash-description-unknown", 
         "crash-description-fullscreen", 
         "crash-disable-extension", 
         "crash-save-log", 
@@ -52,11 +52,11 @@ public static partial class Loc
         "games-remove-ask-message-ignore-option", 
         "remove-unused-fields-ask-message", 
         "remove-unused-fields-no-unused-message", 
-        "remove-ask-add-to-exlusion-list-yes-response", 
+        "remove-ask-add-to-exclusion-list-yes-response", 
         "game-edit-change-notif", 
-        "dbupgrade-progress", 
-        "dbupgrade-fail", 
-        "dbupgrade-empty-space-fail", 
+        "db-upgrade-progress", 
+        "db-upgrade-fail", 
+        "db-upgrade-empty-space-fail", 
         "game-error", 
         "game-start-error-no-game", 
         "game-start-error", 
@@ -117,7 +117,7 @@ public static partial class Loc
         "date-modified-label", 
         "website-label", 
         "path-label", 
-        "oklabel", 
+        "ok-label", 
         "save-label", 
         "close-label", 
         "cancel-label", 
@@ -149,7 +149,7 @@ public static partial class Loc
         "grid-view-label", 
         "details-view-label", 
         "custom-label", 
-        "urllabel", 
+        "url-label", 
         "patrons-label", 
         "license-label", 
         "contributors-label", 
@@ -198,8 +198,8 @@ public static partial class Loc
         "meta-igdb-contrib-notif", 
         "progress-metadata", 
         "progress-installed-games", 
-        "progress-importin-games", 
-        "progress-importin-emulated-games", 
+        "progress-importing-games", 
+        "progress-importing-emulated-games", 
         "progress-library-games", 
         "progress-scanning-games-install-size", 
         "progress-scanning-imported-games-install-size", 
@@ -230,7 +230,7 @@ public static partial class Loc
         "menu-links-title", 
         "menu-help-title", 
         "menu-patreon-support", 
-        "sdkdocumentation", 
+        "sdk-documentation", 
         "menu-restart-system", 
         "menu-shutdown-system", 
         "menu-suspend-system", 
@@ -240,9 +240,9 @@ public static partial class Loc
         "settings-grid-item-spacing", 
         "settings-grid-item-draw-background", 
         "settings-grid-item-cover-margin", 
-        "settings-defaul-icon-source", 
-        "settings-defaul-cover-source", 
-        "settings-defaul-background-source", 
+        "settings-default-icon-source", 
+        "settings-default-cover-source", 
+        "settings-default-background-source", 
         "settings-indent-game-details", 
         "settings-grid-view-details-position", 
         "settings-details-game-list-position", 
@@ -256,7 +256,7 @@ public static partial class Loc
         "settings-cover-art-rendering-label", 
         "settings-target-aspect-ratio-label", 
         "settings-grid-tile-layout-fsnote", 
-        "settings-strech-mode-label", 
+        "settings-stretch-mode-label", 
         "settings-covert-aspect-dvd", 
         "settings-covert-aspect-epic-games-store", 
         "settings-covert-aspect-gog-galaxy2", 
@@ -283,7 +283,7 @@ public static partial class Loc
         "menu-backup-data", 
         "menu-restore-backup", 
         "settings-import-label", 
-        "settings-invalid-dblocation", 
+        "settings-invalid-db-location", 
         "settings-invalid-account-name", 
         "settings-download-metadata-on-import", 
         "settings-start-minimized", 
@@ -303,17 +303,17 @@ public static partial class Loc
         "settings-disable-acceleration-tooltip", 
         "settings-hidden-in-quick-launch", 
         "settings-hidden-in-quick-launch-tooltip", 
-        "settings-quic-launch-items", 
+        "settings-quick-launch-items", 
         "settings-show-background-window-image", 
-        "settings-blur-window-backgroun-image", 
+        "settings-blur-window-background-image", 
         "settings-blur-high-quality", 
-        "settings-darken-window-backghroun-image", 
+        "settings-darken-window-background-image", 
         "settings-show-back-image-on-grid-view", 
         "settings-skin", 
         "settings-skin-color", 
         "settings-skin-fullscreen", 
         "settings-skin-color-fullscreen", 
-        "settings-dblocation", 
+        "settings-db-location", 
         "settings-login-status", 
         "settings-window-title", 
         "settings-clear-web-cache", 
@@ -335,7 +335,7 @@ public static partial class Loc
         "settings-create-localization", 
         "settings-restart-ask-message", 
         "settings-restart-title", 
-        "settings-dbpath-notification", 
+        "settings-db-path-notification", 
         "settings-close-playtime-notif", 
         "settings-fullscreen-rows", 
         "settings-fullscreen-columns", 
@@ -389,10 +389,10 @@ public static partial class Loc
         "settings-preferred-age-rating-org", 
         "settings-scan-lib-install-size-on-lib-update", 
         "settings-scan-lib-install-size-on-lib-update-tooltip", 
-        "strech-none", 
-        "strech-fill", 
-        "strech-uniform", 
-        "strech-uniform-to-fill", 
+        "stretch-none", 
+        "stretch-fill", 
+        "stretch-uniform", 
+        "stretch-uniform-to-fill", 
         "dock-left", 
         "dock-right", 
         "dock-top", 
@@ -464,7 +464,7 @@ public static partial class Loc
         "menu-group-by-title", 
         "menu-sort-ascending", 
         "menu-sort-descending", 
-        "menu-group-dont", 
+        "menu-group-no-group", 
         "menu-group-provider", 
         "menu-group-category", 
         "menu-group-platform", 
@@ -507,7 +507,7 @@ public static partial class Loc
         "game-install-dir-title", 
         "game-cover-title", 
         "game-links-title", 
-        "game-romtitle", 
+        "game-rom-title", 
         "genre-label", 
         "genres-label", 
         "company-label", 
@@ -529,7 +529,7 @@ public static partial class Loc
         "source-label", 
         "sources-label", 
         "recent-activity-label", 
-        "database-erro-title", 
+        "database-error-title", 
         "database-open-error", 
         "database-not-opened-error", 
         "database-open-access-error", 
@@ -541,8 +541,7 @@ public static partial class Loc
         "library-import-emulated-error", 
         "scan-emulator-games-empty-profile-error", 
         "start-generic-error", 
-        "skin-apply-error", 
-        "urlformat-error", 
+        "url-format-error", 
         "app-startup-error", 
         "cef-sharp-init-error", 
         "emulator-import-no-definitions-error", 
@@ -568,14 +567,14 @@ public static partial class Loc
         "empty-tracking-folder-error", 
         "empty-game-name-meta-search-error", 
         "invalid-game-data", 
-        "urlinput-info", 
-        "urlinput-info-titile", 
+        "url-input-info", 
+        "url-input-info-title", 
         "metadata-download-error", 
         "download-error", 
         "clear-filters", 
         "private-account", 
         "public-account", 
-        "apikey", 
+        "api-key", 
         "startup-error", 
         "skin-error", 
         "clear-all", 
@@ -650,7 +649,7 @@ public static partial class Loc
         "additional-emulator-arguments", 
         "override-emulator-arguments", 
         "is-play-action", 
-        "medata-diff-window-title", 
+        "metadata-diff-window-title", 
         "game-import-window-title", 
         "meta-lookup-window-title", 
         "updater-window-title", 
@@ -711,10 +710,9 @@ public static partial class Loc
         "more-action", 
         "play-action-use-plugin", 
         "play-action-use-plugin-tooltip", 
-        "metadownload-no-results-message", 
-        "metadownload-single-game-tip", 
-        "progreess-availability-message", 
-        "description-htmlsupport-tooltip", 
+        "meta-download-single-game-tip", 
+        "progress-availability-message", 
+        "description-html-support-tooltip", 
         "description-playtime-seconds", 
         "description-size-bytes", 
         "release-date-tooltip", 
@@ -765,16 +763,16 @@ public static partial class Loc
         "general-extension-package-error", 
         "general-theme-package-error", 
         "specific-extension-load-error", 
-        "specific-extension-load-sdkerror", 
+        "specific-extension-load-sdk-error", 
         "specific-theme-load-error", 
-        "specific-theme-load-sdkerror", 
+        "specific-theme-load-sdk-error", 
         "general-extension-load-error", 
         "general-theme-load-error", 
         "general-extension-install-api-version-fails", 
         "general-extension-install-success", 
         "general-extension-install-title", 
         "extension-generic", 
-        "addon-install-faild", 
+        "addon-install-failed", 
         "extension-install-fail", 
         "extension-install-prompt", 
         "extension-update-prompt", 
@@ -800,9 +798,9 @@ public static partial class Loc
         "diag-uploading", 
         "add-from-exe", 
         "what-is-this", 
-        "confirumation-ask-generic", 
+        "confirmation-ask-generic", 
         "stats-total-play-time", 
-        "stats-avarage-play-time", 
+        "stats-average-play-time", 
         "stats-top-play-time", 
         "stats-total-install-size", 
         "overview-label", 
@@ -826,7 +824,7 @@ public static partial class Loc
         "game-list-extra-filtered", 
         "game-list-search-results", 
         "item-already-exists", 
-        "random-game-limist-to-filter", 
+        "random-game-limit-to-filter", 
         "random-game-pick-another", 
         "menu-addons", 
         "extensions-installed", 
@@ -837,7 +835,7 @@ public static partial class Loc
         "addons-config-move-info", 
         "libraries-config-window-description", 
         "addons-themes-desktop", 
-        "addons-themes-fullscren", 
+        "addons-themes-fullscreen", 
         "addons-searching", 
         "addon-error-not-compatible", 
         "addon-error-download-failed", 
@@ -849,7 +847,7 @@ public static partial class Loc
         "addon-already-installed", 
         "addon-no-addons-available", 
         "addon-update-addons", 
-        "addon-changelog-not-availavble", 
+        "addon-changelog-not-available", 
         "addon-update-status-downloaded", 
         "addon-update-status-failed", 
         "addon-update-status-license-rejected", 
@@ -897,7 +895,7 @@ public static partial class Loc
         "top-panel-view-select-random-game-button", 
         "top-panel-view-select-random-game-button-tooltip", 
         "filter-preset-save-view-options", 
-        "filter-preset-show-on-fstop-panel", 
+        "filter-preset-show-on-fs-top-panel", 
         "in-past7-days", 
         "in-past31-days", 
         "in-past365-days", 
@@ -911,25 +909,25 @@ public static partial class Loc
         "settings-xinput-processing", 
         "settings-xinput-processing-description", 
         "settings-show-items-main-menu-header", 
-        "settings-swap-main-view-xabuttons", 
-        "settings-swap-main-view-xabuttons-descriptions", 
+        "settings-swap-main-view-xa-buttons", 
+        "settings-swap-main-view-xa-buttons-descriptions", 
         "settings-swap-confirm-cancel-buttons", 
         "settings-swap-confirm-cancel-buttons-descriptions", 
         "settings-primary-controller-only", 
         "settings-primary-controller-only-description", 
         "settings-refocus-on-guid-button", 
         "settings-interface-volume", 
-        "settings-musi-volume", 
+        "settings-music-volume", 
         "settings-mute-background", 
         "error-audio-interface-init", 
         "settings-audio-output-api", 
         "settings-audio-output-api-description", 
-        "settings-fssection-general", 
-        "settings-fssection-visuals", 
-        "settings-fssection-audio", 
-        "settings-fssection-layout", 
-        "settings-fssection-menus", 
-        "settings-fssection", 
+        "settings-fs-section-general", 
+        "settings-fs-section-visuals", 
+        "settings-fs-section-audio", 
+        "settings-fs-section-layout", 
+        "settings-fs-section-menus", 
+        "settings-fs-section", 
         "game-is-starting", 
         "game-is-running", 
         "text-input-capitalize", 
@@ -1011,12 +1009,12 @@ public static partial class Loc
         "emu-exclude-online-files-tooltip", 
         "emu-use-simplified-online-file-scan", 
         "emu-use-simplified-online-file-scan-tooltip", 
-        "metadat-set-all-fields-to-value", 
+        "metadata-set-all-fields-to-value", 
         "override-install-state", 
         "override-install-state-tooltip", 
         "option-only-manually", 
-        "option-once-aday", 
-        "option-once-aweek", 
+        "option-once-a-day", 
+        "option-once-a-week", 
         "option-on-every-startup", 
         "check-program-updates", 
         "check-addon-updates", 
@@ -1035,7 +1033,7 @@ public static partial class Loc
         "search-filter-uninstalled-included", 
         "search-filter-uninstalled-excluded", 
         "search-filter-hidden-included", 
-        "search-filter-hiddenalled-excluded", 
+        "search-filter-hidden-excluded", 
         "game-search-item-action-play", 
         "game-search-item-action-switch-to", 
         "game-search-item-action-open-menu", 
@@ -1056,7 +1054,7 @@ public static partial class Loc
         "exclusions", 
         "emu-scanner-excluded-files", 
         "emu-scanner-excluded-folders", 
-        "emu-import-add-romexclusion-list", 
+        "emu-import-add-rom-exclusion-list", 
         "emu-import-add-folder-exclusion-list", 
         "emu-exclusion-no-config-error", 
         "emu-exclusion-added-message", 
@@ -1089,14 +1087,14 @@ public static partial class Loc
         "settings-auto-backup-include-items", 
         "settings-no-backup-dir-specified-error", 
         "update-notify-only-patches", 
-        "update-notify-only-patches-toolip", 
+        "update-notify-only-patches-tooltip", 
         "settings-past-week-relative-format", 
         "settings-past-week-relative-format-tooltip", 
         "settings-web-image-search", 
         "settings-web-image-search-icon-term", 
         "settings-web-image-search-cover-term", 
         "settings-web-image-search-background", 
-        "gettings-addon-information", 
+        "settings-addon-information", 
         "no-metadata-source", 
         "scanner-config-play-action-settings", 
         "scanner-config-play-action-settings-scanner", 
@@ -1110,7 +1108,7 @@ public static partial class Loc
         "game-menu", 
         "program-folder", 
         "user-data-folder", 
-        "dbcorruption-crash-message"
+        "db-corruption-crash-message"
     };
 
     public const string language_name_id = "language-name";
@@ -1118,7 +1116,7 @@ public static partial class Loc
     public const string exit_app_label_id = "exit-app-label";
     public const string filter_active_label_id = "filter-active-label";
     public const string filter_inactive_label_id = "filter-inactive-label";
-    public const string aditional_filters_id = "aditional-filters";
+    public const string additional_filters_id = "additional-filters";
     public const string filters_id = "filters";
     public const string filter_id = "filter";
     public const string invalid_data_title_id = "invalid-data-title";
@@ -1139,7 +1137,7 @@ public static partial class Loc
     public const string crash_description_id = "crash-description";
     public const string ext_crash_description_id = "ext-crash-description";
     public const string ext_crash_description_fs_id = "ext-crash-description-fs";
-    public const string ext_crash_description_uknown_id = "ext-crash-description-uknown";
+    public const string ext_crash_description_unknown_id = "ext-crash-description-unknown";
     public const string crash_description_fullscreen_id = "crash-description-fullscreen";
     public const string crash_disable_extension_id = "crash-disable-extension";
     public const string crash_save_log_id = "crash-save-log";
@@ -1160,11 +1158,11 @@ public static partial class Loc
     public const string games_remove_ask_message_ignore_option_id = "games-remove-ask-message-ignore-option";
     public const string remove_unused_fields_ask_message_id = "remove-unused-fields-ask-message";
     public const string remove_unused_fields_no_unused_message_id = "remove-unused-fields-no-unused-message";
-    public const string remove_ask_add_to_exlusion_list_yes_response_id = "remove-ask-add-to-exlusion-list-yes-response";
+    public const string remove_ask_add_to_exclusion_list_yes_response_id = "remove-ask-add-to-exclusion-list-yes-response";
     public const string game_edit_change_notif_id = "game-edit-change-notif";
-    public const string dbupgrade_progress_id = "dbupgrade-progress";
-    public const string dbupgrade_fail_id = "dbupgrade-fail";
-    public const string dbupgrade_empty_space_fail_id = "dbupgrade-empty-space-fail";
+    public const string db_upgrade_progress_id = "db-upgrade-progress";
+    public const string db_upgrade_fail_id = "db-upgrade-fail";
+    public const string db_upgrade_empty_space_fail_id = "db-upgrade-empty-space-fail";
     public const string game_error_id = "game-error";
     public const string game_start_error_no_game_id = "game-start-error-no-game";
     public const string game_start_error_id = "game-start-error";
@@ -1225,7 +1223,7 @@ public static partial class Loc
     public const string date_modified_label_id = "date-modified-label";
     public const string website_label_id = "website-label";
     public const string path_label_id = "path-label";
-    public const string oklabel_id = "oklabel";
+    public const string ok_label_id = "ok-label";
     public const string save_label_id = "save-label";
     public const string close_label_id = "close-label";
     public const string cancel_label_id = "cancel-label";
@@ -1257,7 +1255,7 @@ public static partial class Loc
     public const string grid_view_label_id = "grid-view-label";
     public const string details_view_label_id = "details-view-label";
     public const string custom_label_id = "custom-label";
-    public const string urllabel_id = "urllabel";
+    public const string url_label_id = "url-label";
     public const string patrons_label_id = "patrons-label";
     public const string license_label_id = "license-label";
     public const string contributors_label_id = "contributors-label";
@@ -1306,8 +1304,8 @@ public static partial class Loc
     public const string meta_igdb_contrib_notif_id = "meta-igdb-contrib-notif";
     public const string progress_metadata_id = "progress-metadata";
     public const string progress_installed_games_id = "progress-installed-games";
-    public const string progress_importin_games_id = "progress-importin-games";
-    public const string progress_importin_emulated_games_id = "progress-importin-emulated-games";
+    public const string progress_importing_games_id = "progress-importing-games";
+    public const string progress_importing_emulated_games_id = "progress-importing-emulated-games";
     public const string progress_library_games_id = "progress-library-games";
     public const string progress_scanning_games_install_size_id = "progress-scanning-games-install-size";
     public const string progress_scanning_imported_games_install_size_id = "progress-scanning-imported-games-install-size";
@@ -1338,7 +1336,7 @@ public static partial class Loc
     public const string menu_links_title_id = "menu-links-title";
     public const string menu_help_title_id = "menu-help-title";
     public const string menu_patreon_support_id = "menu-patreon-support";
-    public const string sdkdocumentation_id = "sdkdocumentation";
+    public const string sdk_documentation_id = "sdk-documentation";
     public const string menu_restart_system_id = "menu-restart-system";
     public const string menu_shutdown_system_id = "menu-shutdown-system";
     public const string menu_suspend_system_id = "menu-suspend-system";
@@ -1348,9 +1346,9 @@ public static partial class Loc
     public const string settings_grid_item_spacing_id = "settings-grid-item-spacing";
     public const string settings_grid_item_draw_background_id = "settings-grid-item-draw-background";
     public const string settings_grid_item_cover_margin_id = "settings-grid-item-cover-margin";
-    public const string settings_defaul_icon_source_id = "settings-defaul-icon-source";
-    public const string settings_defaul_cover_source_id = "settings-defaul-cover-source";
-    public const string settings_defaul_background_source_id = "settings-defaul-background-source";
+    public const string settings_default_icon_source_id = "settings-default-icon-source";
+    public const string settings_default_cover_source_id = "settings-default-cover-source";
+    public const string settings_default_background_source_id = "settings-default-background-source";
     public const string settings_indent_game_details_id = "settings-indent-game-details";
     public const string settings_grid_view_details_position_id = "settings-grid-view-details-position";
     public const string settings_details_game_list_position_id = "settings-details-game-list-position";
@@ -1364,7 +1362,7 @@ public static partial class Loc
     public const string settings_cover_art_rendering_label_id = "settings-cover-art-rendering-label";
     public const string settings_target_aspect_ratio_label_id = "settings-target-aspect-ratio-label";
     public const string settings_grid_tile_layout_fsnote_id = "settings-grid-tile-layout-fsnote";
-    public const string settings_strech_mode_label_id = "settings-strech-mode-label";
+    public const string settings_stretch_mode_label_id = "settings-stretch-mode-label";
     public const string settings_covert_aspect_dvd_id = "settings-covert-aspect-dvd";
     public const string settings_covert_aspect_epic_games_store_id = "settings-covert-aspect-epic-games-store";
     public const string settings_covert_aspect_gog_galaxy2_id = "settings-covert-aspect-gog-galaxy2";
@@ -1391,7 +1389,7 @@ public static partial class Loc
     public const string menu_backup_data_id = "menu-backup-data";
     public const string menu_restore_backup_id = "menu-restore-backup";
     public const string settings_import_label_id = "settings-import-label";
-    public const string settings_invalid_dblocation_id = "settings-invalid-dblocation";
+    public const string settings_invalid_db_location_id = "settings-invalid-db-location";
     public const string settings_invalid_account_name_id = "settings-invalid-account-name";
     public const string settings_download_metadata_on_import_id = "settings-download-metadata-on-import";
     public const string settings_start_minimized_id = "settings-start-minimized";
@@ -1411,17 +1409,17 @@ public static partial class Loc
     public const string settings_disable_acceleration_tooltip_id = "settings-disable-acceleration-tooltip";
     public const string settings_hidden_in_quick_launch_id = "settings-hidden-in-quick-launch";
     public const string settings_hidden_in_quick_launch_tooltip_id = "settings-hidden-in-quick-launch-tooltip";
-    public const string settings_quic_launch_items_id = "settings-quic-launch-items";
+    public const string settings_quick_launch_items_id = "settings-quick-launch-items";
     public const string settings_show_background_window_image_id = "settings-show-background-window-image";
-    public const string settings_blur_window_backgroun_image_id = "settings-blur-window-backgroun-image";
+    public const string settings_blur_window_background_image_id = "settings-blur-window-background-image";
     public const string settings_blur_high_quality_id = "settings-blur-high-quality";
-    public const string settings_darken_window_backghroun_image_id = "settings-darken-window-backghroun-image";
+    public const string settings_darken_window_background_image_id = "settings-darken-window-background-image";
     public const string settings_show_back_image_on_grid_view_id = "settings-show-back-image-on-grid-view";
     public const string settings_skin_id = "settings-skin";
     public const string settings_skin_color_id = "settings-skin-color";
     public const string settings_skin_fullscreen_id = "settings-skin-fullscreen";
     public const string settings_skin_color_fullscreen_id = "settings-skin-color-fullscreen";
-    public const string settings_dblocation_id = "settings-dblocation";
+    public const string settings_db_location_id = "settings-db-location";
     public const string settings_login_status_id = "settings-login-status";
     public const string settings_window_title_id = "settings-window-title";
     public const string settings_clear_web_cache_id = "settings-clear-web-cache";
@@ -1443,7 +1441,7 @@ public static partial class Loc
     public const string settings_create_localization_id = "settings-create-localization";
     public const string settings_restart_ask_message_id = "settings-restart-ask-message";
     public const string settings_restart_title_id = "settings-restart-title";
-    public const string settings_dbpath_notification_id = "settings-dbpath-notification";
+    public const string settings_db_path_notification_id = "settings-db-path-notification";
     public const string settings_close_playtime_notif_id = "settings-close-playtime-notif";
     public const string settings_fullscreen_rows_id = "settings-fullscreen-rows";
     public const string settings_fullscreen_columns_id = "settings-fullscreen-columns";
@@ -1497,10 +1495,10 @@ public static partial class Loc
     public const string settings_preferred_age_rating_org_id = "settings-preferred-age-rating-org";
     public const string settings_scan_lib_install_size_on_lib_update_id = "settings-scan-lib-install-size-on-lib-update";
     public const string settings_scan_lib_install_size_on_lib_update_tooltip_id = "settings-scan-lib-install-size-on-lib-update-tooltip";
-    public const string strech_none_id = "strech-none";
-    public const string strech_fill_id = "strech-fill";
-    public const string strech_uniform_id = "strech-uniform";
-    public const string strech_uniform_to_fill_id = "strech-uniform-to-fill";
+    public const string stretch_none_id = "stretch-none";
+    public const string stretch_fill_id = "stretch-fill";
+    public const string stretch_uniform_id = "stretch-uniform";
+    public const string stretch_uniform_to_fill_id = "stretch-uniform-to-fill";
     public const string dock_left_id = "dock-left";
     public const string dock_right_id = "dock-right";
     public const string dock_top_id = "dock-top";
@@ -1572,7 +1570,7 @@ public static partial class Loc
     public const string menu_group_by_title_id = "menu-group-by-title";
     public const string menu_sort_ascending_id = "menu-sort-ascending";
     public const string menu_sort_descending_id = "menu-sort-descending";
-    public const string menu_group_dont_id = "menu-group-dont";
+    public const string menu_group_no_group_id = "menu-group-no-group";
     public const string menu_group_provider_id = "menu-group-provider";
     public const string menu_group_category_id = "menu-group-category";
     public const string menu_group_platform_id = "menu-group-platform";
@@ -1615,7 +1613,7 @@ public static partial class Loc
     public const string game_install_dir_title_id = "game-install-dir-title";
     public const string game_cover_title_id = "game-cover-title";
     public const string game_links_title_id = "game-links-title";
-    public const string game_romtitle_id = "game-romtitle";
+    public const string game_rom_title_id = "game-rom-title";
     public const string genre_label_id = "genre-label";
     public const string genres_label_id = "genres-label";
     public const string company_label_id = "company-label";
@@ -1637,7 +1635,7 @@ public static partial class Loc
     public const string source_label_id = "source-label";
     public const string sources_label_id = "sources-label";
     public const string recent_activity_label_id = "recent-activity-label";
-    public const string database_erro_title_id = "database-erro-title";
+    public const string database_error_title_id = "database-error-title";
     public const string database_open_error_id = "database-open-error";
     public const string database_not_opened_error_id = "database-not-opened-error";
     public const string database_open_access_error_id = "database-open-access-error";
@@ -1649,8 +1647,7 @@ public static partial class Loc
     public const string library_import_emulated_error_id = "library-import-emulated-error";
     public const string scan_emulator_games_empty_profile_error_id = "scan-emulator-games-empty-profile-error";
     public const string start_generic_error_id = "start-generic-error";
-    public const string skin_apply_error_id = "skin-apply-error";
-    public const string urlformat_error_id = "urlformat-error";
+    public const string url_format_error_id = "url-format-error";
     public const string app_startup_error_id = "app-startup-error";
     public const string cef_sharp_init_error_id = "cef-sharp-init-error";
     public const string emulator_import_no_definitions_error_id = "emulator-import-no-definitions-error";
@@ -1676,14 +1673,14 @@ public static partial class Loc
     public const string empty_tracking_folder_error_id = "empty-tracking-folder-error";
     public const string empty_game_name_meta_search_error_id = "empty-game-name-meta-search-error";
     public const string invalid_game_data_id = "invalid-game-data";
-    public const string urlinput_info_id = "urlinput-info";
-    public const string urlinput_info_titile_id = "urlinput-info-titile";
+    public const string url_input_info_id = "url-input-info";
+    public const string url_input_info_title_id = "url-input-info-title";
     public const string metadata_download_error_id = "metadata-download-error";
     public const string download_error_id = "download-error";
     public const string clear_filters_id = "clear-filters";
     public const string private_account_id = "private-account";
     public const string public_account_id = "public-account";
-    public const string apikey_id = "apikey";
+    public const string api_key_id = "api-key";
     public const string startup_error_id = "startup-error";
     public const string skin_error_id = "skin-error";
     public const string clear_all_id = "clear-all";
@@ -1758,7 +1755,7 @@ public static partial class Loc
     public const string additional_emulator_arguments_id = "additional-emulator-arguments";
     public const string override_emulator_arguments_id = "override-emulator-arguments";
     public const string is_play_action_id = "is-play-action";
-    public const string medata_diff_window_title_id = "medata-diff-window-title";
+    public const string metadata_diff_window_title_id = "metadata-diff-window-title";
     public const string game_import_window_title_id = "game-import-window-title";
     public const string meta_lookup_window_title_id = "meta-lookup-window-title";
     public const string updater_window_title_id = "updater-window-title";
@@ -1819,10 +1816,9 @@ public static partial class Loc
     public const string more_action_id = "more-action";
     public const string play_action_use_plugin_id = "play-action-use-plugin";
     public const string play_action_use_plugin_tooltip_id = "play-action-use-plugin-tooltip";
-    public const string metadownload_no_results_message_id = "metadownload-no-results-message";
-    public const string metadownload_single_game_tip_id = "metadownload-single-game-tip";
-    public const string progreess_availability_message_id = "progreess-availability-message";
-    public const string description_htmlsupport_tooltip_id = "description-htmlsupport-tooltip";
+    public const string meta_download_single_game_tip_id = "meta-download-single-game-tip";
+    public const string progress_availability_message_id = "progress-availability-message";
+    public const string description_html_support_tooltip_id = "description-html-support-tooltip";
     public const string description_playtime_seconds_id = "description-playtime-seconds";
     public const string description_size_bytes_id = "description-size-bytes";
     public const string release_date_tooltip_id = "release-date-tooltip";
@@ -1873,16 +1869,16 @@ public static partial class Loc
     public const string general_extension_package_error_id = "general-extension-package-error";
     public const string general_theme_package_error_id = "general-theme-package-error";
     public const string specific_extension_load_error_id = "specific-extension-load-error";
-    public const string specific_extension_load_sdkerror_id = "specific-extension-load-sdkerror";
+    public const string specific_extension_load_sdk_error_id = "specific-extension-load-sdk-error";
     public const string specific_theme_load_error_id = "specific-theme-load-error";
-    public const string specific_theme_load_sdkerror_id = "specific-theme-load-sdkerror";
+    public const string specific_theme_load_sdk_error_id = "specific-theme-load-sdk-error";
     public const string general_extension_load_error_id = "general-extension-load-error";
     public const string general_theme_load_error_id = "general-theme-load-error";
     public const string general_extension_install_api_version_fails_id = "general-extension-install-api-version-fails";
     public const string general_extension_install_success_id = "general-extension-install-success";
     public const string general_extension_install_title_id = "general-extension-install-title";
     public const string extension_generic_id = "extension-generic";
-    public const string addon_install_faild_id = "addon-install-faild";
+    public const string addon_install_failed_id = "addon-install-failed";
     public const string extension_install_fail_id = "extension-install-fail";
     public const string extension_install_prompt_id = "extension-install-prompt";
     public const string extension_update_prompt_id = "extension-update-prompt";
@@ -1908,9 +1904,9 @@ public static partial class Loc
     public const string diag_uploading_id = "diag-uploading";
     public const string add_from_exe_id = "add-from-exe";
     public const string what_is_this_id = "what-is-this";
-    public const string confirumation_ask_generic_id = "confirumation-ask-generic";
+    public const string confirmation_ask_generic_id = "confirmation-ask-generic";
     public const string stats_total_play_time_id = "stats-total-play-time";
-    public const string stats_avarage_play_time_id = "stats-avarage-play-time";
+    public const string stats_average_play_time_id = "stats-average-play-time";
     public const string stats_top_play_time_id = "stats-top-play-time";
     public const string stats_total_install_size_id = "stats-total-install-size";
     public const string overview_label_id = "overview-label";
@@ -1934,7 +1930,7 @@ public static partial class Loc
     public const string game_list_extra_filtered_id = "game-list-extra-filtered";
     public const string game_list_search_results_id = "game-list-search-results";
     public const string item_already_exists_id = "item-already-exists";
-    public const string random_game_limist_to_filter_id = "random-game-limist-to-filter";
+    public const string random_game_limit_to_filter_id = "random-game-limit-to-filter";
     public const string random_game_pick_another_id = "random-game-pick-another";
     public const string menu_addons_id = "menu-addons";
     public const string extensions_installed_id = "extensions-installed";
@@ -1945,7 +1941,7 @@ public static partial class Loc
     public const string addons_config_move_info_id = "addons-config-move-info";
     public const string libraries_config_window_description_id = "libraries-config-window-description";
     public const string addons_themes_desktop_id = "addons-themes-desktop";
-    public const string addons_themes_fullscren_id = "addons-themes-fullscren";
+    public const string addons_themes_fullscreen_id = "addons-themes-fullscreen";
     public const string addons_searching_id = "addons-searching";
     public const string addon_error_not_compatible_id = "addon-error-not-compatible";
     public const string addon_error_download_failed_id = "addon-error-download-failed";
@@ -1957,7 +1953,7 @@ public static partial class Loc
     public const string addon_already_installed_id = "addon-already-installed";
     public const string addon_no_addons_available_id = "addon-no-addons-available";
     public const string addon_update_addons_id = "addon-update-addons";
-    public const string addon_changelog_not_availavble_id = "addon-changelog-not-availavble";
+    public const string addon_changelog_not_available_id = "addon-changelog-not-available";
     public const string addon_update_status_downloaded_id = "addon-update-status-downloaded";
     public const string addon_update_status_failed_id = "addon-update-status-failed";
     public const string addon_update_status_license_rejected_id = "addon-update-status-license-rejected";
@@ -2005,7 +2001,7 @@ public static partial class Loc
     public const string top_panel_view_select_random_game_button_id = "top-panel-view-select-random-game-button";
     public const string top_panel_view_select_random_game_button_tooltip_id = "top-panel-view-select-random-game-button-tooltip";
     public const string filter_preset_save_view_options_id = "filter-preset-save-view-options";
-    public const string filter_preset_show_on_fstop_panel_id = "filter-preset-show-on-fstop-panel";
+    public const string filter_preset_show_on_fs_top_panel_id = "filter-preset-show-on-fs-top-panel";
     public const string in_past7_days_id = "in-past7-days";
     public const string in_past31_days_id = "in-past31-days";
     public const string in_past365_days_id = "in-past365-days";
@@ -2019,25 +2015,25 @@ public static partial class Loc
     public const string settings_xinput_processing_id = "settings-xinput-processing";
     public const string settings_xinput_processing_description_id = "settings-xinput-processing-description";
     public const string settings_show_items_main_menu_header_id = "settings-show-items-main-menu-header";
-    public const string settings_swap_main_view_xabuttons_id = "settings-swap-main-view-xabuttons";
-    public const string settings_swap_main_view_xabuttons_descriptions_id = "settings-swap-main-view-xabuttons-descriptions";
+    public const string settings_swap_main_view_xa_buttons_id = "settings-swap-main-view-xa-buttons";
+    public const string settings_swap_main_view_xa_buttons_descriptions_id = "settings-swap-main-view-xa-buttons-descriptions";
     public const string settings_swap_confirm_cancel_buttons_id = "settings-swap-confirm-cancel-buttons";
     public const string settings_swap_confirm_cancel_buttons_descriptions_id = "settings-swap-confirm-cancel-buttons-descriptions";
     public const string settings_primary_controller_only_id = "settings-primary-controller-only";
     public const string settings_primary_controller_only_description_id = "settings-primary-controller-only-description";
     public const string settings_refocus_on_guid_button_id = "settings-refocus-on-guid-button";
     public const string settings_interface_volume_id = "settings-interface-volume";
-    public const string settings_musi_volume_id = "settings-musi-volume";
+    public const string settings_music_volume_id = "settings-music-volume";
     public const string settings_mute_background_id = "settings-mute-background";
     public const string error_audio_interface_init_id = "error-audio-interface-init";
     public const string settings_audio_output_api_id = "settings-audio-output-api";
     public const string settings_audio_output_api_description_id = "settings-audio-output-api-description";
-    public const string settings_fssection_general_id = "settings-fssection-general";
-    public const string settings_fssection_visuals_id = "settings-fssection-visuals";
-    public const string settings_fssection_audio_id = "settings-fssection-audio";
-    public const string settings_fssection_layout_id = "settings-fssection-layout";
-    public const string settings_fssection_menus_id = "settings-fssection-menus";
-    public const string settings_fssection_id = "settings-fssection";
+    public const string settings_fs_section_general_id = "settings-fs-section-general";
+    public const string settings_fs_section_visuals_id = "settings-fs-section-visuals";
+    public const string settings_fs_section_audio_id = "settings-fs-section-audio";
+    public const string settings_fs_section_layout_id = "settings-fs-section-layout";
+    public const string settings_fs_section_menus_id = "settings-fs-section-menus";
+    public const string settings_fs_section_id = "settings-fs-section";
     public const string game_is_starting_id = "game-is-starting";
     public const string game_is_running_id = "game-is-running";
     public const string text_input_capitalize_id = "text-input-capitalize";
@@ -2119,12 +2115,12 @@ public static partial class Loc
     public const string emu_exclude_online_files_tooltip_id = "emu-exclude-online-files-tooltip";
     public const string emu_use_simplified_online_file_scan_id = "emu-use-simplified-online-file-scan";
     public const string emu_use_simplified_online_file_scan_tooltip_id = "emu-use-simplified-online-file-scan-tooltip";
-    public const string metadat_set_all_fields_to_value_id = "metadat-set-all-fields-to-value";
+    public const string metadata_set_all_fields_to_value_id = "metadata-set-all-fields-to-value";
     public const string override_install_state_id = "override-install-state";
     public const string override_install_state_tooltip_id = "override-install-state-tooltip";
     public const string option_only_manually_id = "option-only-manually";
-    public const string option_once_aday_id = "option-once-aday";
-    public const string option_once_aweek_id = "option-once-aweek";
+    public const string option_once_a_day_id = "option-once-a-day";
+    public const string option_once_a_week_id = "option-once-a-week";
     public const string option_on_every_startup_id = "option-on-every-startup";
     public const string check_program_updates_id = "check-program-updates";
     public const string check_addon_updates_id = "check-addon-updates";
@@ -2143,7 +2139,7 @@ public static partial class Loc
     public const string search_filter_uninstalled_included_id = "search-filter-uninstalled-included";
     public const string search_filter_uninstalled_excluded_id = "search-filter-uninstalled-excluded";
     public const string search_filter_hidden_included_id = "search-filter-hidden-included";
-    public const string search_filter_hiddenalled_excluded_id = "search-filter-hiddenalled-excluded";
+    public const string search_filter_hidden_excluded_id = "search-filter-hidden-excluded";
     public const string game_search_item_action_play_id = "game-search-item-action-play";
     public const string game_search_item_action_switch_to_id = "game-search-item-action-switch-to";
     public const string game_search_item_action_open_menu_id = "game-search-item-action-open-menu";
@@ -2164,7 +2160,7 @@ public static partial class Loc
     public const string exclusions_id = "exclusions";
     public const string emu_scanner_excluded_files_id = "emu-scanner-excluded-files";
     public const string emu_scanner_excluded_folders_id = "emu-scanner-excluded-folders";
-    public const string emu_import_add_romexclusion_list_id = "emu-import-add-romexclusion-list";
+    public const string emu_import_add_rom_exclusion_list_id = "emu-import-add-rom-exclusion-list";
     public const string emu_import_add_folder_exclusion_list_id = "emu-import-add-folder-exclusion-list";
     public const string emu_exclusion_no_config_error_id = "emu-exclusion-no-config-error";
     public const string emu_exclusion_added_message_id = "emu-exclusion-added-message";
@@ -2197,14 +2193,14 @@ public static partial class Loc
     public const string settings_auto_backup_include_items_id = "settings-auto-backup-include-items";
     public const string settings_no_backup_dir_specified_error_id = "settings-no-backup-dir-specified-error";
     public const string update_notify_only_patches_id = "update-notify-only-patches";
-    public const string update_notify_only_patches_toolip_id = "update-notify-only-patches-toolip";
+    public const string update_notify_only_patches_tooltip_id = "update-notify-only-patches-tooltip";
     public const string settings_past_week_relative_format_id = "settings-past-week-relative-format";
     public const string settings_past_week_relative_format_tooltip_id = "settings-past-week-relative-format-tooltip";
     public const string settings_web_image_search_id = "settings-web-image-search";
     public const string settings_web_image_search_icon_term_id = "settings-web-image-search-icon-term";
     public const string settings_web_image_search_cover_term_id = "settings-web-image-search-cover-term";
     public const string settings_web_image_search_background_id = "settings-web-image-search-background";
-    public const string gettings_addon_information_id = "gettings-addon-information";
+    public const string settings_addon_information_id = "settings-addon-information";
     public const string no_metadata_source_id = "no-metadata-source";
     public const string scanner_config_play_action_settings_id = "scanner-config-play-action-settings";
     public const string scanner_config_play_action_settings_scanner_id = "scanner-config-play-action-settings-scanner";
@@ -2218,7 +2214,7 @@ public static partial class Loc
     public const string game_menu_id = "game-menu";
     public const string program_folder_id = "program-folder";
     public const string user_data_folder_id = "user-data-folder";
-    public const string dbcorruption_crash_message_id = "dbcorruption-crash-message";
+    public const string db_corruption_crash_message_id = "db-corruption-crash-message";
 
     public static string language_name()
     {
@@ -2240,9 +2236,9 @@ public static partial class Loc
     {
         return GetString("filter-inactive-label");
     }
-    public static string aditional_filters()
+    public static string additional_filters()
     {
-        return GetString("aditional-filters");
+        return GetString("additional-filters");
     }
     public static string filters()
     {
@@ -2316,17 +2312,17 @@ public static partial class Loc
     {
         return GetString("crash-description");
     }
-    public static string ext_crash_description(IFluentType var0)
+    public static string ext_crash_description(object name)
     {
-        return GetString("ext-crash-description", ("var0", var0));
+        return GetString("ext-crash-description", ("name", name));
     }
-    public static string ext_crash_description_fs(IFluentType var0)
+    public static string ext_crash_description_fs(object name)
     {
-        return GetString("ext-crash-description-fs", ("var0", var0));
+        return GetString("ext-crash-description-fs", ("name", name));
     }
-    public static string ext_crash_description_uknown()
+    public static string ext_crash_description_unknown()
     {
-        return GetString("ext-crash-description-uknown");
+        return GetString("ext-crash-description-unknown");
     }
     public static string crash_description_fullscreen()
     {
@@ -2384,97 +2380,97 @@ public static partial class Loc
     {
         return GetString("game-uninstall-running-error");
     }
-    public static string game_remove_ask_message(IFluentType var0)
+    public static string game_remove_ask_message(object gameName)
     {
-        return GetString("game-remove-ask-message", ("var0", var0));
+        return GetString("game-remove-ask-message", ("gameName", gameName));
     }
-    public static string games_remove_ask_message(IFluentType var0)
+    public static string games_remove_ask_message(object gameCount)
     {
-        return GetString("games-remove-ask-message", ("var0", var0));
+        return GetString("games-remove-ask-message", ("gameCount", gameCount));
     }
-    public static string game_remove_ask_message_ignore_option(IFluentType var0)
+    public static string game_remove_ask_message_ignore_option(object gameName)
     {
-        return GetString("game-remove-ask-message-ignore-option", ("var0", var0));
+        return GetString("game-remove-ask-message-ignore-option", ("gameName", gameName));
     }
-    public static string games_remove_ask_message_ignore_option(IFluentType var0)
+    public static string games_remove_ask_message_ignore_option(object gameCount)
     {
-        return GetString("games-remove-ask-message-ignore-option", ("var0", var0));
+        return GetString("games-remove-ask-message-ignore-option", ("gameCount", gameCount));
     }
-    public static string remove_unused_fields_ask_message(IFluentType var0)
+    public static string remove_unused_fields_ask_message(object entryCount)
     {
-        return GetString("remove-unused-fields-ask-message", ("var0", var0));
+        return GetString("remove-unused-fields-ask-message", ("entryCount", entryCount));
     }
     public static string remove_unused_fields_no_unused_message()
     {
         return GetString("remove-unused-fields-no-unused-message");
     }
-    public static string remove_ask_add_to_exlusion_list_yes_response()
+    public static string remove_ask_add_to_exclusion_list_yes_response()
     {
-        return GetString("remove-ask-add-to-exlusion-list-yes-response");
+        return GetString("remove-ask-add-to-exclusion-list-yes-response");
     }
     public static string game_edit_change_notif()
     {
         return GetString("game-edit-change-notif");
     }
-    public static string dbupgrade_progress()
+    public static string db_upgrade_progress()
     {
-        return GetString("dbupgrade-progress");
+        return GetString("db-upgrade-progress");
     }
-    public static string dbupgrade_fail()
+    public static string db_upgrade_fail()
     {
-        return GetString("dbupgrade-fail");
+        return GetString("db-upgrade-fail");
     }
-    public static string dbupgrade_empty_space_fail(IFluentType var0)
+    public static string db_upgrade_empty_space_fail(object megaBytes)
     {
-        return GetString("dbupgrade-empty-space-fail", ("var0", var0));
+        return GetString("db-upgrade-empty-space-fail", ("megaBytes", megaBytes));
     }
     public static string game_error()
     {
         return GetString("game-error");
     }
-    public static string game_start_error_no_game(IFluentType var0)
+    public static string game_start_error_no_game(object gameId)
     {
-        return GetString("game-start-error-no-game", ("var0", var0));
+        return GetString("game-start-error-no-game", ("gameId", gameId));
     }
-    public static string game_start_error(IFluentType var0)
+    public static string game_start_error()
     {
-        return GetString("game-start-error", ("var0", var0));
+        return GetString("game-start-error");
     }
-    public static string game_start_action_error(IFluentType var0)
+    public static string game_start_action_error()
     {
-        return GetString("game-start-action-error", ("var0", var0));
+        return GetString("game-start-action-error");
     }
-    public static string game_open_location_error(IFluentType var0)
+    public static string game_open_location_error()
     {
-        return GetString("game-open-location-error", ("var0", var0));
+        return GetString("game-open-location-error");
     }
-    public static string calculate_game_size_error(IFluentType var0)
+    public static string calculate_game_size_error()
     {
-        return GetString("calculate-game-size-error", ("var0", var0));
+        return GetString("calculate-game-size-error");
     }
     public static string calculate_game_size_error_caption()
     {
         return GetString("calculate-game-size-error-caption");
     }
-    public static string calculate_games_size_error_message(IFluentType var0)
+    public static string calculate_games_size_error_message(object errorCount)
     {
-        return GetString("calculate-games-size-error-message", ("var0", var0));
+        return GetString("calculate-games-size-error-message", ("errorCount", errorCount));
     }
-    public static string game_shortcut_error(IFluentType var0)
+    public static string game_shortcut_error()
     {
-        return GetString("game-shortcut-error", ("var0", var0));
+        return GetString("game-shortcut-error");
     }
-    public static string manual_open_error(IFluentType var0)
+    public static string manual_open_error()
     {
-        return GetString("manual-open-error", ("var0", var0));
+        return GetString("manual-open-error");
     }
-    public static string game_install_error(IFluentType var0)
+    public static string game_install_error()
     {
-        return GetString("game-install-error", ("var0", var0));
+        return GetString("game-install-error");
     }
-    public static string game_uninstall_error(IFluentType var0)
+    public static string game_uninstall_error()
     {
-        return GetString("game-uninstall-error", ("var0", var0));
+        return GetString("game-uninstall-error");
     }
     public static string error_no_play_action()
     {
@@ -2668,9 +2664,9 @@ public static partial class Loc
     {
         return GetString("path-label");
     }
-    public static string oklabel()
+    public static string ok_label()
     {
-        return GetString("oklabel");
+        return GetString("ok-label");
     }
     public static string save_label()
     {
@@ -2796,9 +2792,9 @@ public static partial class Loc
     {
         return GetString("custom-label");
     }
-    public static string urllabel()
+    public static string url_label()
     {
-        return GetString("urllabel");
+        return GetString("url-label");
     }
     public static string patrons_label()
     {
@@ -2992,13 +2988,13 @@ public static partial class Loc
     {
         return GetString("progress-installed-games");
     }
-    public static string progress_importin_games(IFluentType var0)
+    public static string progress_importing_games(object libraryName)
     {
-        return GetString("progress-importin-games", ("var0", var0));
+        return GetString("progress-importing-games", ("libraryName", libraryName));
     }
-    public static string progress_importin_emulated_games(IFluentType var0)
+    public static string progress_importing_emulated_games(object scannerName)
     {
-        return GetString("progress-importin-emulated-games", ("var0", var0));
+        return GetString("progress-importing-emulated-games", ("scannerName", scannerName));
     }
     public static string progress_library_games()
     {
@@ -3120,9 +3116,9 @@ public static partial class Loc
     {
         return GetString("menu-patreon-support");
     }
-    public static string sdkdocumentation()
+    public static string sdk_documentation()
     {
-        return GetString("sdkdocumentation");
+        return GetString("sdk-documentation");
     }
     public static string menu_restart_system()
     {
@@ -3160,17 +3156,17 @@ public static partial class Loc
     {
         return GetString("settings-grid-item-cover-margin");
     }
-    public static string settings_defaul_icon_source()
+    public static string settings_default_icon_source()
     {
-        return GetString("settings-defaul-icon-source");
+        return GetString("settings-default-icon-source");
     }
-    public static string settings_defaul_cover_source()
+    public static string settings_default_cover_source()
     {
-        return GetString("settings-defaul-cover-source");
+        return GetString("settings-default-cover-source");
     }
-    public static string settings_defaul_background_source()
+    public static string settings_default_background_source()
     {
-        return GetString("settings-defaul-background-source");
+        return GetString("settings-default-background-source");
     }
     public static string settings_indent_game_details()
     {
@@ -3224,9 +3220,9 @@ public static partial class Loc
     {
         return GetString("settings-grid-tile-layout-fsnote");
     }
-    public static string settings_strech_mode_label()
+    public static string settings_stretch_mode_label()
     {
-        return GetString("settings-strech-mode-label");
+        return GetString("settings-stretch-mode-label");
     }
     public static string settings_covert_aspect_dvd()
     {
@@ -3332,9 +3328,9 @@ public static partial class Loc
     {
         return GetString("settings-import-label");
     }
-    public static string settings_invalid_dblocation()
+    public static string settings_invalid_db_location()
     {
-        return GetString("settings-invalid-dblocation");
+        return GetString("settings-invalid-db-location");
     }
     public static string settings_invalid_account_name()
     {
@@ -3412,25 +3408,25 @@ public static partial class Loc
     {
         return GetString("settings-hidden-in-quick-launch-tooltip");
     }
-    public static string settings_quic_launch_items()
+    public static string settings_quick_launch_items()
     {
-        return GetString("settings-quic-launch-items");
+        return GetString("settings-quick-launch-items");
     }
     public static string settings_show_background_window_image()
     {
         return GetString("settings-show-background-window-image");
     }
-    public static string settings_blur_window_backgroun_image()
+    public static string settings_blur_window_background_image()
     {
-        return GetString("settings-blur-window-backgroun-image");
+        return GetString("settings-blur-window-background-image");
     }
     public static string settings_blur_high_quality()
     {
         return GetString("settings-blur-high-quality");
     }
-    public static string settings_darken_window_backghroun_image()
+    public static string settings_darken_window_background_image()
     {
-        return GetString("settings-darken-window-backghroun-image");
+        return GetString("settings-darken-window-background-image");
     }
     public static string settings_show_back_image_on_grid_view()
     {
@@ -3452,9 +3448,9 @@ public static partial class Loc
     {
         return GetString("settings-skin-color-fullscreen");
     }
-    public static string settings_dblocation()
+    public static string settings_db_location()
     {
-        return GetString("settings-dblocation");
+        return GetString("settings-db-location");
     }
     public static string settings_login_status()
     {
@@ -3540,9 +3536,9 @@ public static partial class Loc
     {
         return GetString("settings-restart-title");
     }
-    public static string settings_dbpath_notification()
+    public static string settings_db_path_notification()
     {
-        return GetString("settings-dbpath-notification");
+        return GetString("settings-db-path-notification");
     }
     public static string settings_close_playtime_notif()
     {
@@ -3756,21 +3752,21 @@ public static partial class Loc
     {
         return GetString("settings-scan-lib-install-size-on-lib-update-tooltip");
     }
-    public static string strech_none()
+    public static string stretch_none()
     {
-        return GetString("strech-none");
+        return GetString("stretch-none");
     }
-    public static string strech_fill()
+    public static string stretch_fill()
     {
-        return GetString("strech-fill");
+        return GetString("stretch-fill");
     }
-    public static string strech_uniform()
+    public static string stretch_uniform()
     {
-        return GetString("strech-uniform");
+        return GetString("stretch-uniform");
     }
-    public static string strech_uniform_to_fill()
+    public static string stretch_uniform_to_fill()
     {
-        return GetString("strech-uniform-to-fill");
+        return GetString("stretch-uniform-to-fill");
     }
     public static string dock_left()
     {
@@ -3880,9 +3876,9 @@ public static partial class Loc
     {
         return GetString("emu-wizard-scanning");
     }
-    public static string emu_wizard_scanning_specific(IFluentType var0)
+    public static string emu_wizard_scanning_specific(object path)
     {
-        return GetString("emu-wizard-scanning-specific", ("var0", var0));
+        return GetString("emu-wizard-scanning-specific", ("path", path));
     }
     public static string first_window_title()
     {
@@ -3912,9 +3908,9 @@ public static partial class Loc
     {
         return GetString("first-plugin-download-error");
     }
-    public static string first_downloading_addon(IFluentType var0)
+    public static string first_downloading_addon(object integrationName)
     {
-        return GetString("first-downloading-addon", ("var0", var0));
+        return GetString("first-downloading-addon", ("integrationName", integrationName));
     }
     public static string default_addon_list_download()
     {
@@ -4024,13 +4020,13 @@ public static partial class Loc
     {
         return GetString("emu-load-args-preset-tooltip");
     }
-    public static string emu_removal_confirmation(IFluentType var0, IFluentType var1)
+    public static string emu_removal_confirmation(object emulatorName, object gameCount)
     {
-        return GetString("emu-removal-confirmation", ("var0", var0), ("var1", var1));
+        return GetString("emu-removal-confirmation", ("emulatorName", emulatorName), ("gameCount", gameCount));
     }
-    public static string platform_removal_confirmation(IFluentType var0, IFluentType var1, IFluentType var2)
+    public static string platform_removal_confirmation(object platformName, object gamesCount, object emulatorsCount)
     {
-        return GetString("platform-removal-confirmation", ("var0", var0), ("var1", var1), ("var2", var2));
+        return GetString("platform-removal-confirmation", ("platformName", platformName), ("gamesCount", gamesCount), ("emulatorsCount", emulatorsCount));
     }
     public static string emulator_settings_help()
     {
@@ -4056,9 +4052,9 @@ public static partial class Loc
     {
         return GetString("menu-sort-descending");
     }
-    public static string menu_group_dont()
+    public static string menu_group_no_group()
     {
-        return GetString("menu-group-dont");
+        return GetString("menu-group-no-group");
     }
     public static string menu_group_provider()
     {
@@ -4228,9 +4224,9 @@ public static partial class Loc
     {
         return GetString("game-links-title");
     }
-    public static string game_romtitle()
+    public static string game_rom_title()
     {
-        return GetString("game-romtitle");
+        return GetString("game-rom-title");
     }
     public static string genre_label()
     {
@@ -4316,9 +4312,9 @@ public static partial class Loc
     {
         return GetString("recent-activity-label");
     }
-    public static string database_erro_title()
+    public static string database_error_title()
     {
-        return GetString("database-erro-title");
+        return GetString("database-error-title");
     }
     public static string database_open_error()
     {
@@ -4328,9 +4324,9 @@ public static partial class Loc
     {
         return GetString("database-not-opened-error");
     }
-    public static string database_open_access_error(IFluentType var0)
+    public static string database_open_access_error(object path)
     {
-        return GetString("database-open-access-error", ("var0", var0));
+        return GetString("database-open-access-error", ("path", path));
     }
     public static string diag_package_creation_error()
     {
@@ -4348,13 +4344,13 @@ public static partial class Loc
     {
         return GetString("diag-package-creation-success");
     }
-    public static string library_import_error(IFluentType var0)
+    public static string library_import_error(object libraryName)
     {
-        return GetString("library-import-error", ("var0", var0));
+        return GetString("library-import-error", ("libraryName", libraryName));
     }
-    public static string library_import_emulated_error(IFluentType var0)
+    public static string library_import_emulated_error(object scannerName)
     {
-        return GetString("library-import-emulated-error", ("var0", var0));
+        return GetString("library-import-emulated-error", ("scannerName", scannerName));
     }
     public static string scan_emulator_games_empty_profile_error()
     {
@@ -4364,13 +4360,9 @@ public static partial class Loc
     {
         return GetString("start-generic-error");
     }
-    public static string skin_apply_error(IFluentType var0, IFluentType var1, IFluentType var2)
+    public static string url_format_error()
     {
-        return GetString("skin-apply-error", ("var0", var0), ("var1", var1), ("var2", var2));
-    }
-    public static string urlformat_error()
-    {
-        return GetString("urlformat-error");
+        return GetString("url-format-error");
     }
     public static string app_startup_error()
     {
@@ -4472,17 +4464,17 @@ public static partial class Loc
     {
         return GetString("invalid-game-data");
     }
-    public static string urlinput_info()
+    public static string url_input_info()
     {
-        return GetString("urlinput-info");
+        return GetString("url-input-info");
     }
-    public static string urlinput_info_titile()
+    public static string url_input_info_title()
     {
-        return GetString("urlinput-info-titile");
+        return GetString("url-input-info-title");
     }
-    public static string metadata_download_error(IFluentType var0)
+    public static string metadata_download_error()
     {
-        return GetString("metadata-download-error", ("var0", var0));
+        return GetString("metadata-download-error");
     }
     public static string download_error()
     {
@@ -4500,9 +4492,9 @@ public static partial class Loc
     {
         return GetString("public-account");
     }
-    public static string apikey()
+    public static string api_key()
     {
-        return GetString("apikey");
+        return GetString("api-key");
     }
     public static string startup_error()
     {
@@ -4800,9 +4792,9 @@ public static partial class Loc
     {
         return GetString("is-play-action");
     }
-    public static string medata_diff_window_title()
+    public static string metadata_diff_window_title()
     {
-        return GetString("medata-diff-window-title");
+        return GetString("metadata-diff-window-title");
     }
     public static string game_import_window_title()
     {
@@ -5044,21 +5036,17 @@ public static partial class Loc
     {
         return GetString("play-action-use-plugin-tooltip");
     }
-    public static string metadownload_no_results_message(IFluentType var0)
+    public static string meta_download_single_game_tip()
     {
-        return GetString("metadownload-no-results-message", ("var0", var0));
+        return GetString("meta-download-single-game-tip");
     }
-    public static string metadownload_single_game_tip()
+    public static string progress_availability_message()
     {
-        return GetString("metadownload-single-game-tip");
+        return GetString("progress-availability-message");
     }
-    public static string progreess_availability_message()
+    public static string description_html_support_tooltip()
     {
-        return GetString("progreess-availability-message");
-    }
-    public static string description_htmlsupport_tooltip()
-    {
-        return GetString("description-htmlsupport-tooltip");
+        return GetString("description-html-support-tooltip");
     }
     public static string description_playtime_seconds()
     {
@@ -5104,21 +5092,21 @@ public static partial class Loc
     {
         return GetString("last-played");
     }
-    public static string played_days(IFluentType var0, IFluentType var1, IFluentType var2)
+    public static string played_days(object days, object hours, object minutes)
     {
-        return GetString("played-days", ("var0", var0), ("var1", var1), ("var2", var2));
+        return GetString("played-days", ("days", days), ("hours", hours), ("minutes", minutes));
     }
-    public static string played_hours(IFluentType var0, IFluentType var1)
+    public static string played_hours(object hours, object minutes)
     {
-        return GetString("played-hours", ("var0", var0), ("var1", var1));
+        return GetString("played-hours", ("hours", hours), ("minutes", minutes));
     }
-    public static string played_minutes(IFluentType var0)
+    public static string played_minutes(object minutes)
     {
-        return GetString("played-minutes", ("var0", var0));
+        return GetString("played-minutes", ("minutes", minutes));
     }
-    public static string played_seconds(IFluentType var0)
+    public static string played_seconds(object seconds)
     {
-        return GetString("played-seconds", ("var0", var0));
+        return GetString("played-seconds", ("seconds", seconds));
     }
     public static string played_none()
     {
@@ -5140,9 +5128,9 @@ public static partial class Loc
     {
         return GetString("calculating-install-size-message");
     }
-    public static string calculating_install_size_of_game_message(IFluentType var0)
+    public static string calculating_install_size_of_game_message(object gameName)
     {
-        return GetString("calculating-install-size-of-game-message", ("var0", var0));
+        return GetString("calculating-install-size-of-game-message", ("gameName", gameName));
     }
     public static string script_install_fail()
     {
@@ -5176,13 +5164,13 @@ public static partial class Loc
     {
         return GetString("install-size-calculate-edit-button-tooltip");
     }
-    public static string client_not_installed_error(IFluentType var0)
+    public static string client_not_installed_error(object clientName)
     {
-        return GetString("client-not-installed-error", ("var0", var0));
+        return GetString("client-not-installed-error", ("clientName", clientName));
     }
-    public static string sign_in_external_notif(IFluentType var0)
+    public static string sign_in_external_notif(object clientName)
     {
-        return GetString("sign-in-external-notif", ("var0", var0));
+        return GetString("sign-in-external-notif", ("clientName", clientName));
     }
     public static string sign_in_external_wait_message()
     {
@@ -5256,21 +5244,21 @@ public static partial class Loc
     {
         return GetString("general-theme-package-error");
     }
-    public static string specific_extension_load_error(IFluentType var0)
+    public static string specific_extension_load_error(object extensionName)
     {
-        return GetString("specific-extension-load-error", ("var0", var0));
+        return GetString("specific-extension-load-error", ("extensionName", extensionName));
     }
-    public static string specific_extension_load_sdkerror(IFluentType var0)
+    public static string specific_extension_load_sdk_error(object extensionName)
     {
-        return GetString("specific-extension-load-sdkerror", ("var0", var0));
+        return GetString("specific-extension-load-sdk-error", ("extensionName", extensionName));
     }
-    public static string specific_theme_load_error(IFluentType var0)
+    public static string specific_theme_load_error(object themeName)
     {
-        return GetString("specific-theme-load-error", ("var0", var0));
+        return GetString("specific-theme-load-error", ("themeName", themeName));
     }
-    public static string specific_theme_load_sdkerror(IFluentType var0)
+    public static string specific_theme_load_sdk_error(object themeName)
     {
-        return GetString("specific-theme-load-sdkerror", ("var0", var0));
+        return GetString("specific-theme-load-sdk-error", ("themeName", themeName));
     }
     public static string general_extension_load_error()
     {
@@ -5296,41 +5284,41 @@ public static partial class Loc
     {
         return GetString("extension-generic");
     }
-    public static string addon_install_faild(IFluentType var0)
+    public static string addon_install_failed(object addonName)
     {
-        return GetString("addon-install-faild", ("var0", var0));
+        return GetString("addon-install-failed", ("addonName", addonName));
     }
-    public static string extension_install_fail(IFluentType var0)
+    public static string extension_install_fail()
     {
-        return GetString("extension-install-fail", ("var0", var0));
+        return GetString("extension-install-fail");
     }
-    public static string extension_install_prompt(IFluentType var0, IFluentType var1, IFluentType var2)
+    public static string extension_install_prompt(object name, object author, object version)
     {
-        return GetString("extension-install-prompt", ("var0", var0), ("var1", var1), ("var2", var2));
+        return GetString("extension-install-prompt", ("name", name), ("author", author), ("version", version));
     }
-    public static string extension_update_prompt(IFluentType var0, IFluentType var1, IFluentType var2)
+    public static string extension_update_prompt(object name, object currentVersion, object newVersion)
     {
-        return GetString("extension-update-prompt", ("var0", var0), ("var1", var1), ("var2", var2));
+        return GetString("extension-update-prompt", ("name", name), ("currentVersion", currentVersion), ("newVersion", newVersion));
     }
-    public static string theme_install_fail(IFluentType var0)
+    public static string theme_install_fail()
     {
-        return GetString("theme-install-fail", ("var0", var0));
+        return GetString("theme-install-fail");
     }
-    public static string theme_install_prompt(IFluentType var0, IFluentType var1, IFluentType var2)
+    public static string theme_install_prompt(object name, object author, object version)
     {
-        return GetString("theme-install-prompt", ("var0", var0), ("var1", var1), ("var2", var2));
+        return GetString("theme-install-prompt", ("name", name), ("author", author), ("version", version));
     }
-    public static string theme_update_prompt(IFluentType var0, IFluentType var1, IFluentType var2)
+    public static string theme_update_prompt(object name, object currentVersion, object newVersion)
     {
-        return GetString("theme-update-prompt", ("var0", var0), ("var1", var1), ("var2", var2));
+        return GetString("theme-update-prompt", ("name", name), ("currentVersion", currentVersion), ("newVersion", newVersion));
     }
-    public static string url_navigation_message(IFluentType var0)
+    public static string url_navigation_message(object pageUrl)
     {
-        return GetString("url-navigation-message", ("var0", var0));
+        return GetString("url-navigation-message", ("pageUrl", pageUrl));
     }
-    public static string game_image_size_warning(IFluentType var0, IFluentType var1, IFluentType var2)
+    public static string game_image_size_warning(object iconPixels, object coverPixels, object backgroundPixels)
     {
-        return GetString("game-image-size-warning", ("var0", var0), ("var1", var1), ("var2", var2));
+        return GetString("game-image-size-warning", ("iconPixels", iconPixels), ("coverPixels", coverPixels), ("backgroundPixels", backgroundPixels));
     }
     public static string performance_warning_title()
     {
@@ -5340,9 +5328,9 @@ public static partial class Loc
     {
         return GetString("dont-show-again-title");
     }
-    public static string incompatible_drag_and_drop_extension_error(IFluentType var0)
+    public static string incompatible_drag_and_drop_extension_error(object extensionName)
     {
-        return GetString("incompatible-drag-and-drop-extension-error", ("var0", var0));
+        return GetString("incompatible-drag-and-drop-extension-error", ("extensionName", extensionName));
     }
     public static string incompatible_drag_and_drop_extension_error_title()
     {
@@ -5400,17 +5388,17 @@ public static partial class Loc
     {
         return GetString("what-is-this");
     }
-    public static string confirumation_ask_generic()
+    public static string confirmation_ask_generic()
     {
-        return GetString("confirumation-ask-generic");
+        return GetString("confirmation-ask-generic");
     }
     public static string stats_total_play_time()
     {
         return GetString("stats-total-play-time");
     }
-    public static string stats_avarage_play_time()
+    public static string stats_average_play_time()
     {
-        return GetString("stats-avarage-play-time");
+        return GetString("stats-average-play-time");
     }
     public static string stats_top_play_time()
     {
@@ -5504,9 +5492,9 @@ public static partial class Loc
     {
         return GetString("item-already-exists");
     }
-    public static string random_game_limist_to_filter()
+    public static string random_game_limit_to_filter()
     {
-        return GetString("random-game-limist-to-filter");
+        return GetString("random-game-limit-to-filter");
     }
     public static string random_game_pick_another()
     {
@@ -5532,9 +5520,9 @@ public static partial class Loc
     {
         return GetString("extensions-updates");
     }
-    public static string extensions_updates_count(IFluentType var0)
+    public static string extensions_updates_count(object updatesCount)
     {
-        return GetString("extensions-updates-count", ("var0", var0));
+        return GetString("extensions-updates-count", ("updatesCount", updatesCount));
     }
     public static string addons_config_move_info()
     {
@@ -5548,9 +5536,9 @@ public static partial class Loc
     {
         return GetString("addons-themes-desktop");
     }
-    public static string addons_themes_fullscren()
+    public static string addons_themes_fullscreen()
     {
-        return GetString("addons-themes-fullscren");
+        return GetString("addons-themes-fullscreen");
     }
     public static string addons_searching()
     {
@@ -5596,9 +5584,9 @@ public static partial class Loc
     {
         return GetString("addon-update-addons");
     }
-    public static string addon_changelog_not_availavble()
+    public static string addon_changelog_not_available()
     {
-        return GetString("addon-changelog-not-availavble");
+        return GetString("addon-changelog-not-available");
     }
     public static string addon_update_status_downloaded()
     {
@@ -5612,9 +5600,9 @@ public static partial class Loc
     {
         return GetString("addon-update-status-license-rejected");
     }
-    public static string addon_downloading_addon(IFluentType var0)
+    public static string addon_downloading_addon(object addonName)
     {
-        return GetString("addon-downloading-addon", ("var0", var0));
+        return GetString("addon-downloading-addon", ("addonName", addonName));
     }
     public static string addon_looking_for_updates()
     {
@@ -5632,9 +5620,9 @@ public static partial class Loc
     {
         return GetString("addon-dev-reference-loaded");
     }
-    public static string addon_license_window_title(IFluentType var0)
+    public static string addon_license_window_title(object addonName)
     {
-        return GetString("addon-license-window-title", ("var0", var0));
+        return GetString("addon-license-window-title", ("addonName", addonName));
     }
     public static string license_accept()
     {
@@ -5788,9 +5776,9 @@ public static partial class Loc
     {
         return GetString("filter-preset-save-view-options");
     }
-    public static string filter_preset_show_on_fstop_panel()
+    public static string filter_preset_show_on_fs_top_panel()
     {
-        return GetString("filter-preset-show-on-fstop-panel");
+        return GetString("filter-preset-show-on-fs-top-panel");
     }
     public static string in_past7_days()
     {
@@ -5844,13 +5832,13 @@ public static partial class Loc
     {
         return GetString("settings-show-items-main-menu-header");
     }
-    public static string settings_swap_main_view_xabuttons()
+    public static string settings_swap_main_view_xa_buttons()
     {
-        return GetString("settings-swap-main-view-xabuttons");
+        return GetString("settings-swap-main-view-xa-buttons");
     }
-    public static string settings_swap_main_view_xabuttons_descriptions()
+    public static string settings_swap_main_view_xa_buttons_descriptions()
     {
-        return GetString("settings-swap-main-view-xabuttons-descriptions");
+        return GetString("settings-swap-main-view-xa-buttons-descriptions");
     }
     public static string settings_swap_confirm_cancel_buttons()
     {
@@ -5876,9 +5864,9 @@ public static partial class Loc
     {
         return GetString("settings-interface-volume");
     }
-    public static string settings_musi_volume()
+    public static string settings_music_volume()
     {
-        return GetString("settings-musi-volume");
+        return GetString("settings-music-volume");
     }
     public static string settings_mute_background()
     {
@@ -5896,37 +5884,37 @@ public static partial class Loc
     {
         return GetString("settings-audio-output-api-description");
     }
-    public static string settings_fssection_general()
+    public static string settings_fs_section_general()
     {
-        return GetString("settings-fssection-general");
+        return GetString("settings-fs-section-general");
     }
-    public static string settings_fssection_visuals()
+    public static string settings_fs_section_visuals()
     {
-        return GetString("settings-fssection-visuals");
+        return GetString("settings-fs-section-visuals");
     }
-    public static string settings_fssection_audio()
+    public static string settings_fs_section_audio()
     {
-        return GetString("settings-fssection-audio");
+        return GetString("settings-fs-section-audio");
     }
-    public static string settings_fssection_layout()
+    public static string settings_fs_section_layout()
     {
-        return GetString("settings-fssection-layout");
+        return GetString("settings-fs-section-layout");
     }
-    public static string settings_fssection_menus()
+    public static string settings_fs_section_menus()
     {
-        return GetString("settings-fssection-menus");
+        return GetString("settings-fs-section-menus");
     }
-    public static string settings_fssection()
+    public static string settings_fs_section()
     {
-        return GetString("settings-fssection");
+        return GetString("settings-fs-section");
     }
-    public static string game_is_starting(IFluentType var0)
+    public static string game_is_starting(object gameName)
     {
-        return GetString("game-is-starting", ("var0", var0));
+        return GetString("game-is-starting", ("gameName", gameName));
     }
-    public static string game_is_running(IFluentType var0)
+    public static string game_is_running(object gameName)
     {
-        return GetString("game-is-running", ("var0", var0));
+        return GetString("game-is-running", ("gameName", gameName));
     }
     public static string text_input_capitalize()
     {
@@ -6224,9 +6212,9 @@ public static partial class Loc
     {
         return GetString("install-size-scan-use-size-on-disk-option-tooltip");
     }
-    public static string warning_blacklisted_extensions(IFluentType var0)
+    public static string warning_blacklisted_extensions(object addonNames)
     {
-        return GetString("warning-blacklisted-extensions", ("var0", var0));
+        return GetString("warning-blacklisted-extensions", ("addonNames", addonNames));
     }
     public static string emu_exclude_online_files()
     {
@@ -6244,9 +6232,9 @@ public static partial class Loc
     {
         return GetString("emu-use-simplified-online-file-scan-tooltip");
     }
-    public static string metadat_set_all_fields_to_value()
+    public static string metadata_set_all_fields_to_value()
     {
-        return GetString("metadat-set-all-fields-to-value");
+        return GetString("metadata-set-all-fields-to-value");
     }
     public static string override_install_state()
     {
@@ -6260,13 +6248,13 @@ public static partial class Loc
     {
         return GetString("option-only-manually");
     }
-    public static string option_once_aday()
+    public static string option_once_a_day()
     {
-        return GetString("option-once-aday");
+        return GetString("option-once-a-day");
     }
-    public static string option_once_aweek()
+    public static string option_once_a_week()
     {
-        return GetString("option-once-aweek");
+        return GetString("option-once-a-week");
     }
     public static string option_on_every_startup()
     {
@@ -6340,9 +6328,9 @@ public static partial class Loc
     {
         return GetString("search-filter-hidden-included");
     }
-    public static string search_filter_hiddenalled_excluded()
+    public static string search_filter_hidden_excluded()
     {
-        return GetString("search-filter-hiddenalled-excluded");
+        return GetString("search-filter-hidden-excluded");
     }
     public static string game_search_item_action_play()
     {
@@ -6424,9 +6412,9 @@ public static partial class Loc
     {
         return GetString("emu-scanner-excluded-folders");
     }
-    public static string emu_import_add_romexclusion_list()
+    public static string emu_import_add_rom_exclusion_list()
     {
-        return GetString("emu-import-add-romexclusion-list");
+        return GetString("emu-import-add-rom-exclusion-list");
     }
     public static string emu_import_add_folder_exclusion_list()
     {
@@ -6436,9 +6424,9 @@ public static partial class Loc
     {
         return GetString("emu-exclusion-no-config-error");
     }
-    public static string emu_exclusion_added_message(IFluentType var0)
+    public static string emu_exclusion_added_message(object scannerName)
     {
-        return GetString("emu-exclusion-added-message", ("var0", var0));
+        return GetString("emu-exclusion-added-message", ("scannerName", scannerName));
     }
     public static string emu_override_platform()
     {
@@ -6556,9 +6544,9 @@ public static partial class Loc
     {
         return GetString("update-notify-only-patches");
     }
-    public static string update_notify_only_patches_toolip()
+    public static string update_notify_only_patches_tooltip()
     {
-        return GetString("update-notify-only-patches-toolip");
+        return GetString("update-notify-only-patches-tooltip");
     }
     public static string settings_past_week_relative_format()
     {
@@ -6584,9 +6572,9 @@ public static partial class Loc
     {
         return GetString("settings-web-image-search-background");
     }
-    public static string gettings_addon_information()
+    public static string settings_addon_information()
     {
-        return GetString("gettings-addon-information");
+        return GetString("settings-addon-information");
     }
     public static string no_metadata_source()
     {
@@ -6640,8 +6628,8 @@ public static partial class Loc
     {
         return GetString("user-data-folder");
     }
-    public static string dbcorruption_crash_message()
+    public static string db_corruption_crash_message()
     {
-        return GetString("dbcorruption-crash-message");
+        return GetString("db-corruption-crash-message");
     }
 }
