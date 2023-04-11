@@ -29,6 +29,24 @@ public static class TestVars
     }
 }
 
+public class TestDateTimes : DateTimes.IDateTimes
+{
+    public DateTime Now { get; set; }
+    public DateTime Today { get; set; }
+
+    public TestDateTimes(DateTime now)
+    {
+        Now = now;
+        Today = now;
+    }
+
+    public TestDateTimes(DateTime now, DateTime today)
+    {
+        Now = now;
+        Today = today;
+    }
+}
+
 public static class PlayniteTests
 {
     //public static MetadataFile GenerateFakeFile(string directory)

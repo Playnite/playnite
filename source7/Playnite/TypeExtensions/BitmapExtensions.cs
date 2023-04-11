@@ -10,13 +10,6 @@ using TGASharpLib;
 
 namespace System.Drawing.Imaging;
 
-public enum ImageLoadScaling
-{
-    None,
-    BitmapDotNet,
-    Custom
-}
-
 // TODO: check what we really need from these methods and delete rest
 
 public class BitmapLoadProperties: IEquatable<BitmapLoadProperties>

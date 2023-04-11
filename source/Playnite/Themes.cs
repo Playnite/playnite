@@ -26,9 +26,6 @@ namespace Playnite
         public static System.Version FullscreenApiVersion => new System.Version("2.5.0");
         public static ThemeManifest CurrentTheme { get; private set; }
         public static ThemeManifest DefaultTheme { get; private set; }
-        public const string DefaultDesktopThemeId = "Playnite_builtin_DefaultDesktop";
-        public const string DefaultFullscreenThemeId = "Playnite_builtin_DefaultFullscreen";
-        public const string DefaultThemeDirName = "Default";
 
         public static System.Version GetApiVersion(ApplicationMode mode)
         {

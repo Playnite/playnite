@@ -1,0 +1,23 @@
+﻿using System.Windows;
+using System.Windows.Data;
+using System.Windows.Markup;
+
+namespace Playnite;
+
+public class NullToDependencyPropertyUnsetConverter : MarkupExtension, IValueConverter
+{
+    public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+    {
+        return value ?? DependencyProperty.UnsetValue;
+    }
+
+    public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+    {
+        throw new NotSupportedException();
+    }
+
+    public override object ProvideValue(IServiceProvider serviceProvider)
+    {
+        return this;
+    }
+}

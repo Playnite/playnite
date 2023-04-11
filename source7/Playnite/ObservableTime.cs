@@ -11,7 +11,7 @@ public class ObservableTime : ObservableObject
 
     public string Time
     {
-        get => DateTime.Now.ToString(Constants.TimeUiFormat);
+        get => DateTime.Now.ToString(DateTimes.TimeUiFormat);
     }
 
     public ObservableTime()
