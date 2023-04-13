@@ -16,5 +16,11 @@ public class LocalizationsTests
         Assert.AreEqual("10h 5m", Loc.played_hours((decimal)10, (decimal)5));
         Assert.AreEqual("10h 5m", Loc.played_hours("10", "5"));
     }
+
+    [Test]
+    public void AvailableLangsTest()
+    {
+        CollectionAssert.IsNotEmpty(Localization.GetLanguageList());
+    }
 }
     

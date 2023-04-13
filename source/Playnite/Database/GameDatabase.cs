@@ -123,25 +123,7 @@ namespace Playnite.Database
             get; private set;
         }
 
-        internal const string filesDirName = "files";
-        private const string settingsFileName = "database.json";
-        private const string gamesDirName = "games";
-        private const string platformsDirName = "platforms";
-        private const string emulatorsDirName = "emulators";
-        private const string genresDirName = "genres";
-        private const string companiesDirName = "companies";
-        private const string tagsDirName = "tags";
-        private const string featuresDirName = "features";
-        private const string categoriesDirName = "categories";
-        private const string seriesDirName = "series";
-        private const string ageRatingsDirName = "ageratings";
-        private const string regionsDirName = "regions";
-        private const string sourcesDirName = "sources";
-        private const string toolsDirName = "tools";
-        private const string gameScannersDirName = "scanners";
-        private const string filterPresetsDirName = "filterpresets";
-        private const string importExclusionsDirName = "importexclusions";
-        private const string completionStatusesDirName = "completionstatuses";
+
 
         private string GamesDirectoryPath { get => Path.Combine(DatabasePath, gamesDirName); }
         private string PlatformsDirectoryPath { get => Path.Combine(DatabasePath, platformsDirName); }

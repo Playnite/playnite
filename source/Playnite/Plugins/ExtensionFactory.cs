@@ -55,13 +55,6 @@ namespace Playnite.Plugins
         }
     }
 
-    public enum AddonLoadError
-    {
-        None,
-        Uknown,
-        SDKVersion
-    }
-
     public class ExtensionFactory : ObservableObject, IDisposable
     {
         private static ILogger logger = LogManager.GetLogger();
@@ -222,11 +215,6 @@ namespace Playnite.Plugins
             }
 
             return null;
-        }
-
-        internal static IEnumerable<BaseExtensionManifest> DeduplicateExtList(List<BaseExtensionManifest> list)
-        {
-            return list.GroupBy(a => a.Id).Select(g => g.OrderByDescending(x => x.Version).First());
         }
 
         public static List<ExtensionManifest> GetInstalledManifests(List<string> externalPaths = null)

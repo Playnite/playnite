@@ -21,32 +21,6 @@ namespace Playnite
 {
     public class ThemeManager
     {
-        private static ILogger logger = LogManager.GetLogger();
-        public static System.Version DesktopApiVersion => new System.Version("2.5.0");
-        public static System.Version FullscreenApiVersion => new System.Version("2.5.0");
-        public static ThemeManifest CurrentTheme { get; private set; }
-        public static ThemeManifest DefaultTheme { get; private set; }
-
-        public static System.Version GetApiVersion(ApplicationMode mode)
-        {
-            return mode == ApplicationMode.Desktop ? DesktopApiVersion : FullscreenApiVersion;
-        }
-
-        public static string GetThemeRootDir(ApplicationMode mode)
-        {
-            return mode == ApplicationMode.Desktop ? "Desktop" : "Fullscreen";
-        }
-
-        public static void SetCurrentTheme(ThemeManifest theme)
-        {
-            CurrentTheme = theme;
-        }
-
-        public static void SetDefaultTheme(ThemeManifest theme)
-        {
-            DefaultTheme = theme;
-        }
-
         public static void ApplyFullscreenButtonPrompts(Application app, FullscreenButtonPrompts prompts)
         {
             if (prompts == FullscreenSettings.DefaultButtonPrompts)
@@ -227,75 +201,6 @@ namespace Playnite
             {
                 yield return theme;
             }
-        }
-
-        public static List<ThemeManifest> GetAvailableThemes(ApplicationMode mode)
-        {
-            var modeDir = GetThemeRootDir(mode);
-            var user = new List<BaseExtensionManifest>();
-            var install = new List<BaseExtensionManifest>();
-
-            var userPath = Path.Combine(PlaynitePaths.ThemesUserDataPath, modeDir);
-            if (!PlayniteSettings.IsPortable && Directory.Exists(userPath))
-            {
-                foreach (var dir in Directory.GetDirectories(userPath))
-                {
-                    try
-                    {
-                        var descriptorPath = Path.Combine(dir, PlaynitePaths.ThemeManifestFileName);
-                        if (File.Exists(descriptorPath))
-                        {
-                            var info = new FileInfo(descriptorPath);
-                            var man = new ThemeManifest(descriptorPath);
-                            if (!man.Id.IsNullOrEmpty())
-                            {
-                                user.Add(man);
-                            }
-                        }
-                    }
-                    catch (Exception e) when (!PlayniteEnvironment.ThrowAllErrors)
-                    {
-                        logger.Error(e, $"Failed to load theme info {dir}");
-                    }
-                }
-            }
-
-            var programPath = Path.Combine(PlaynitePaths.ThemesProgramPath, modeDir);
-            if (Directory.Exists(programPath))
-            {
-                foreach (var dir in Directory.GetDirectories(programPath))
-                {
-                    try
-                    {
-                        var descriptorPath = Path.Combine(dir, PlaynitePaths.ThemeManifestFileName);
-                        if (File.Exists(descriptorPath))
-                        {
-                            var info = new FileInfo(descriptorPath);
-                            var man = new ThemeManifest(descriptorPath);
-                            if (!man.Id.IsNullOrEmpty())
-                            {
-                                if (user.Any(a => a.Id == man.Id))
-                                {
-                                    continue;
-                                }
-                                else
-                                {
-                                    install.Add(man);
-                                }
-                            }
-                        }
-                    }
-                    catch (Exception e) when (!PlayniteEnvironment.ThrowAllErrors)
-                    {
-                        logger.Error(e, $"Failed to load theme info {dir}");
-                    }
-                }
-            }
-
-            var result = new List<ThemeManifest>();
-            result.AddRange(ExtensionFactory.DeduplicateExtList(user).Cast<ThemeManifest>());
-            result.AddRange(ExtensionFactory.DeduplicateExtList(install).Cast<ThemeManifest>());
-            return result;
         }
     }
 }

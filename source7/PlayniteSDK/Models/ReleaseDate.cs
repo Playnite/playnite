@@ -1,10 +1,70 @@
 ﻿using System.Globalization;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Playnite;
 
 /// <summary>
+///
+/// </summary>
+public class ReleaseDateConverter : JsonConverter<ReleaseDate>
+{
+    /// <inheritdoc/>
+    public override ReleaseDate Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    {
+        if (reader.TokenType == JsonTokenType.String)
+        {
+            var strDate = reader.GetString();
+            if (string.IsNullOrWhiteSpace(strDate))
+            {
+                throw new Exception("Can't deserialize ReleaseDate object from empty string.");
+            }
+            else
+            {
+                return ReleaseDate.Deserialize(strDate);
+            }
+        }
+        // This is to support "wrong" ReleaseDate serialization that current IGDB plugin uses
+        else if (reader.TokenType == JsonTokenType.StartObject)
+        {
+            reader.Read();
+            var propName = reader.GetString();
+            if (propName != "ReleaseDate")
+            {
+                throw new NotSupportedException("Can't deserialize release date, uknown format.");
+            }
+
+            reader.Read();
+            var strDate = reader.GetString();
+            if (string.IsNullOrWhiteSpace(strDate))
+            {
+                throw new Exception("Can't deserialize ReleaseDate object from empty string.");
+            }
+            else
+            {
+                while (reader.TokenType != JsonTokenType.EndObject)
+                {
+                    reader.Read();
+                }
+
+                return ReleaseDate.Deserialize(strDate);
+            }
+        }
+
+        throw new NotSupportedException("Can't deserialize release date, uknown format.");
+    }
+
+    /// <inheritdoc/>
+    public override void Write(Utf8JsonWriter writer, ReleaseDate value, JsonSerializerOptions options)
+    {
+        writer.WriteStringValue(value.Serialize());
+    }
+}
+
+/// <summary>
 /// Represents game release date.
 /// </summary>
+[JsonConverter(typeof(ReleaseDateConverter))]
 public class ReleaseDate : IComparable, IComparable<ReleaseDate>, IEquatable<ReleaseDate>
 {
     private static readonly char[] serSplitter = new char[] { '-' };

@@ -16,7 +16,10 @@ public class FileSystemTests
     [Test]
     public void GetFileSizeTest()
     {
-        Assert.That(FileSystem.GetFileSize(Assembly.GetExecutingAssembly().Location), Is.GreaterThan(0));
+        var iniFile = Path.Combine(TestVars.ResourcesDir, "TestIni.ini");
+        Assert.That(FileSystem.GetFileSize(iniFile), Is.EqualTo(662));
+        // This test can in theory fail on systems with sector size smaller than the default 4k
+        Assert.That(FileSystem.GetFileSizeOnDisk(iniFile), Is.GreaterThanOrEqualTo(4096));
     }
 
     [Test]
@@ -111,6 +114,10 @@ public class FileSystemTests
         DirectoryAssert.Exists(longDir);
 
         FileSystem.CreateFile(longFile);
+        File.WriteAllText(longFile, "test");
         FileAssert.Exists(longFile);
+
+        Assert.That(FileSystem.GetFileSize(longFile), Is.GreaterThan(0));
+        Assert.That(FileSystem.GetFileSizeOnDisk(longFile), Is.GreaterThan(0));
     }
 }

@@ -1,13 +1,78 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using System.ComponentModel;
+using System.IO;
 using System.Text.Json.Serialization;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace Playnite;
 
 [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
 public class RequiresRestartAttribute : Attribute
 {
+}
+
+public partial class ListViewColumnProperty : ObservableObject
+{
+    public GameField Field { get; set; }
+    [ObservableProperty] private bool visible = false;
+    [ObservableProperty] private double width = double.NaN;
+
+    partial void OnWidthChanged(double value)
+    {
+        // Don't allow exteremly small size because it could lead to a user accidentely hiding the column by resizing: #2257
+        if (value < 25)
+        {
+#pragma warning disable MVVMTK0034 // Direct field reference to [ObservableProperty] backing field
+            width = 25;
+#pragma warning restore MVVMTK0034 // Direct field reference to [ObservableProperty] backing field
+        }
+    }
+
+    public ListViewColumnProperty()
+    {
+    }
+
+    public ListViewColumnProperty(GameField field)
+    {
+        Field = field;
+    }
+}
+
+public partial class ListViewColumnsProperties : ObservableObject
+{
+    // TODO: autogen
+    [ObservableProperty] private ListViewColumnProperty icon = new(GameField.Icon);
+    [ObservableProperty] private ListViewColumnProperty name = new(GameField.Name);
+    [ObservableProperty] private ListViewColumnProperty platform = new(GameField.Platforms);
+    [ObservableProperty] private ListViewColumnProperty developers = new(GameField.Developers);
+    [ObservableProperty] private ListViewColumnProperty publishers = new(GameField.Publishers);
+    [ObservableProperty] private ListViewColumnProperty releaseDate = new(GameField.ReleaseDate);
+    [ObservableProperty] private ListViewColumnProperty genres = new(GameField.Genres);
+    [ObservableProperty] private ListViewColumnProperty lastActivity = new(GameField.LastActivity);
+    [ObservableProperty] private ListViewColumnProperty recentActivity = new(GameField.RecentActivity);
+    [ObservableProperty] private ListViewColumnProperty isInstalled = new(GameField.IsInstalled);
+    [ObservableProperty] private ListViewColumnProperty installDirectory = new(GameField.InstallDirectory);
+    [ObservableProperty] private ListViewColumnProperty categories = new(GameField.Categories);
+    [ObservableProperty] private ListViewColumnProperty playtime = new(GameField.Playtime);
+    [ObservableProperty] private ListViewColumnProperty added = new(GameField.Added);
+    [ObservableProperty] private ListViewColumnProperty modified = new(GameField.Modified);
+    [ObservableProperty] private ListViewColumnProperty playCount = new(GameField.PlayCount);
+    [ObservableProperty] private ListViewColumnProperty installSize = new(GameField.InstallSize);
+    [ObservableProperty] private ListViewColumnProperty series = new(GameField.Series);
+    [ObservableProperty] private ListViewColumnProperty version = new(GameField.Version);
+    [ObservableProperty] private ListViewColumnProperty ageRating = new(GameField.AgeRatings);
+    [ObservableProperty] private ListViewColumnProperty region = new(GameField.Regions);
+    [ObservableProperty] private ListViewColumnProperty source = new(GameField.Source);
+    [ObservableProperty] private ListViewColumnProperty completionStatus = new(GameField.CompletionStatus);
+    [ObservableProperty] private ListViewColumnProperty userScore = new(GameField.UserScore);
+    [ObservableProperty] private ListViewColumnProperty criticScore = new(GameField.CriticScore);
+    [ObservableProperty] private ListViewColumnProperty communityScore = new(GameField.CommunityScore);
+    [ObservableProperty] private ListViewColumnProperty tags = new(GameField.Tags);
+    [ObservableProperty] private ListViewColumnProperty pluginId = new(GameField.PluginId);
+    [ObservableProperty] private ListViewColumnProperty features = new(GameField.Features);
+    [ObservableProperty] private ListViewColumnProperty roms = new(GameField.Roms);
 }
 
 public partial class DetailsVisibilitySettings : ObservableObject
@@ -143,44 +208,44 @@ public enum DesktopSettingsPage
 
 public enum AccessibilityInterfaceOptions
 {
-    [Description(Loc.automatic_id)]     Auto,
-    [Description(Loc.always_on_id)]     AlwaysOn,
-    [Description(Loc.always_off_id)]    AlwaysOff
+    [Description(LocId.automatic)]     Auto,
+    [Description(LocId.always_on)]     AlwaysOn,
+    [Description(LocId.always_off)]    AlwaysOff
 }
 
 public enum GameSearchItemAction
 {
-    [Description(Loc.game_search_item_action_play_id)]      Play,
-    [Description(Loc.game_search_item_action_switch_to_id)] SwitchTo,
-    [Description(Loc.game_search_item_action_open_menu_id)] OpenMenu,
-    [Description(Loc.game_search_item_action_edit_id)]      Edit,
-    [Description(Loc.none_id)]                              None
+    [Description(LocId.game_search_item_action_play)]      Play,
+    [Description(LocId.game_search_item_action_switch_to)] SwitchTo,
+    [Description(LocId.game_search_item_action_open_menu)] OpenMenu,
+    [Description(LocId.game_search_item_action_edit)]      Edit,
+    [Description(LocId.none)]                              None
 }
 
 public enum AfterLaunchOptions
 {
-    [Description(Loc.none_id)]      None,
-    [Description(Loc.minimize_id)]  Minimize,
-    [Description(Loc.close_id)]     Close
+    [Description(LocId.none)]      None,
+    [Description(LocId.minimize)]  Minimize,
+    [Description(LocId.close)]     Close
 }
 
 public enum AfterGameCloseOptions
 {
-    [Description(Loc.none_id)]            None,
-    [Description(Loc.restore_window_id)]  Restore
+    [Description(LocId.none)]            None,
+    [Description(LocId.restore_window)]  Restore
 }
 
 public enum ApplicationView
 {
-    [Description(Loc.library_id)]     Library,
-    [Description(Loc.statistics_id)]  Statistics
+    [Description(LocId.library)]     Library,
+    [Description(LocId.statistics)]  Statistics
 }
 
 public enum ImageLoadScaling
 {
-    [Description(Loc.settings_image_scaling_quality_id)]     None,
-    [Description(Loc.settings_image_scaling_balanced_id)]    BitmapDotNet,
-    [Description(Loc.settings_image_scaling_alternative_id)] Custom
+    [Description(LocId.settings_image_scaling_quality)]     None,
+    [Description(LocId.settings_image_scaling_balanced)]    BitmapDotNet,
+    [Description(LocId.settings_image_scaling_alternative)] Custom
 }
 
 public enum TrayIconType
@@ -192,68 +257,246 @@ public enum TrayIconType
 
 public enum DefaultIconSourceOptions
 {
-    [Description(Loc.game_provider_title_id)] Library,
-    [Description(Loc.platform_title_id)]      Platform,
+    [Description(LocId.game_provider_title)] Library,
+    [Description(LocId.platform_title)]      Platform,
     [Description("Playnite")]                 General,
-    [Description(Loc.none_id)]                None
+    [Description(LocId.none)]                None
 }
 
 public enum DefaultCoverSourceOptions
 {
-    [Description(Loc.platform_title_id)] Platform,
+    [Description(LocId.platform_title)] Platform,
     [Description("Playnite")]            General,
-    [Description(Loc.none_id)]           None
+    [Description(LocId.none)]           None
 }
 
 public enum DefaultBackgroundSourceOptions
 {
-    [Description(Loc.game_provider_title_id)] Library,
-    [Description(Loc.platform_title_id)]      Platform,
-    [Description(Loc.game_cover_title_id)]    Cover,
-    [Description(Loc.none_id)]                None
+    [Description(LocId.game_provider_title)] Library,
+    [Description(LocId.platform_title)]      Platform,
+    [Description(LocId.game_cover_title)]    Cover,
+    [Description(LocId.none)]                None
 }
 
 public enum TextRenderingModeOptions
 {
-    [Description(Loc.settings_text_rendering_mode_option_auto_id)]       Auto,
-    [Description(Loc.settings_text_rendering_mode_option_aliased_id)]    Aliased,
-    [Description(Loc.settings_text_rendering_mode_option_grayscale_id)]  Grayscale,
-    [Description(Loc.settings_text_rendering_mode_option_clear_type_id)] ClearType
+    [Description(LocId.settings_text_rendering_mode_option_auto)]       Auto,
+    [Description(LocId.settings_text_rendering_mode_option_aliased)]    Aliased,
+    [Description(LocId.settings_text_rendering_mode_option_grayscale)]  Grayscale,
+    [Description(LocId.settings_text_rendering_mode_option_clear_type)] ClearType
 }
 
 public enum TextFormattingModeOptions
 {
-    [Description(Loc.settings_text_formatting_mode_option_ideal_id)]   Ideal,
-    [Description(Loc.settings_text_formatting_mode_option_display_id)] Display
+    [Description(LocId.settings_text_formatting_mode_option_ideal)]   Ideal,
+    [Description(LocId.settings_text_formatting_mode_option_display)] Display
 }
 
 public enum UpdateCheckFrequency
 {
-    [Description(Loc.option_on_every_startup_id)] OnEveryStartup,
-    [Description(Loc.option_once_a_day_id)]       OnceADay,
-    [Description(Loc.option_once_a_week_id)]      OnceAWeek
+    [Description(LocId.option_on_every_startup)] OnEveryStartup,
+    [Description(LocId.option_once_a_day)]       OnceADay,
+    [Description(LocId.option_once_a_week)]      OnceAWeek
 }
 
 public enum LibraryUpdateCheckFrequency
 {
-    [Description(Loc.option_only_manually_id)]    Manually,
-    [Description(Loc.option_on_every_startup_id)] OnEveryStartup,
-    [Description(Loc.option_once_a_day_id)]       OnceADay,
-    [Description(Loc.option_once_a_week_id)]      OnceAWeek
+    [Description(LocId.option_only_manually)]    Manually,
+    [Description(LocId.option_on_every_startup)] OnEveryStartup,
+    [Description(LocId.option_once_a_day)]       OnceADay,
+    [Description(LocId.option_once_a_week)]      OnceAWeek
 }
 
 public enum AutoBackupFrequency
 {
-    [Description(Loc.option_once_a_day_id)]  OnceADay,
-    [Description(Loc.option_once_a_week_id)] OnceAWeek
+    [Description(LocId.option_once_a_day)]  OnceADay,
+    [Description(LocId.option_once_a_week)] OnceAWeek
+}
+
+public partial class FullscreenFilterSettings
+{
+}
+
+public partial class FullscreenViewSettings : ObservableObject
+{
+    [ObservableProperty] private SortOrder sortingOrder = SortOrder.Name;
+    [ObservableProperty] private SortOrderDirection sortingOrderDirection = SortOrderDirection.Ascending;
+}
+
+public partial class ViewSettings : ObservableObject
+{
+    [ObservableProperty] private SortOrder sortingOrder = SortOrder.Name;
+    [ObservableProperty] private SortOrderDirection sortingOrderDirection = SortOrderDirection.Ascending;
+    [ObservableProperty] private GroupableField groupingOrder = GroupableField.None;
+    [ObservableProperty] private DesktopView gamesViewType = DesktopView.Details;
+    [ObservableProperty] private ExplorerField selectedExplorerField = ExplorerField.Library;
+    [ObservableProperty] private ListViewColumnsProperties listViewColumns = new();
+    [ObservableProperty] private Dictionary<GroupableField, List<string>> collapsedGroups = new();
+    [ObservableProperty] private List<GameField> listViewColumsOrder = new()
+    {
+        GameField.Icon,
+        GameField.Name,
+        GameField.ReleaseDate,
+        GameField.Genres,
+        GameField.LastActivity,
+        GameField.Playtime,
+        GameField.PluginId
+    };
+
+    public ViewSettings()
+    {
+        listViewColumns.Icon.Visible = true;
+        listViewColumns.Name.Visible = true;
+        listViewColumns.ReleaseDate.Visible = true;
+        listViewColumns.Genres.Visible = true;
+        listViewColumns.LastActivity.Visible = true;
+        listViewColumns.Playtime.Visible = true;
+        listViewColumns.PluginId.Visible = true;
+    }
+
+    public bool IsGroupCollapsed(GroupableField field, string groupName)
+    {
+        if (CollapsedGroups.ContainsKey(field) &&
+            CollapsedGroups[field].ContainsString(groupName, StringComparison.OrdinalIgnoreCase))
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public void ExpandAllGroups(GroupableField field)
+    {
+        if (CollapsedGroups.Remove(field))
+        {
+            OnPropertyChanged(nameof(CollapsedGroups));
+        }
+    }
+
+    public void CollapseGroups(GroupableField field, List<string> groupNames)
+    {
+        if (!CollapsedGroups.ContainsKey(field))
+        {
+            CollapsedGroups.Add(field, new List<string>());
+        }
+
+        foreach (var groupName in groupNames)
+        {
+            if (!CollapsedGroups[field].ContainsString(groupName, StringComparison.OrdinalIgnoreCase))
+            {
+                CollapsedGroups[field].Add(groupName);
+            }
+        }
+
+        OnPropertyChanged(nameof(CollapsedGroups));
+    }
+
+    public void SetGroupCollapseState(GroupableField field, string groupName, bool collapsed)
+    {
+        if (collapsed)
+        {
+            if (!CollapsedGroups.ContainsKey(field))
+            {
+                CollapsedGroups.Add(field, new List<string>());
+            }
+
+            if (!CollapsedGroups[field].ContainsString(groupName, StringComparison.OrdinalIgnoreCase))
+            {
+                CollapsedGroups[field].Add(groupName);
+                OnPropertyChanged(nameof(CollapsedGroups));
+            }
+        }
+        else
+        {
+            if (CollapsedGroups.ContainsKey(field))
+            {
+                var existing = CollapsedGroups[field].FirstOrDefault(a => string.Equals(a, groupName, StringComparison.OrdinalIgnoreCase));
+                if (existing != null)
+                {
+                    CollapsedGroups[field].Remove(existing);
+                }
+
+                if (CollapsedGroups[field].Count == 0)
+                {
+                    CollapsedGroups.Remove(field);
+                }
+
+                OnPropertyChanged(nameof(CollapsedGroups));
+            }
+        }
+    }
+}
+
+public partial class FullscreenSettings : ObservableObject
+{
+    [ObservableProperty] private int monitor = Computer.GetGetPrimaryScreenIndex();
+    [ObservableProperty] private int rows = 2;
+    [ObservableProperty] private int columns = 4;
+    [ObservableProperty] private bool horizontalLayout = false;
+    [ObservableProperty] private bool showBattery = false;
+    [ObservableProperty] private bool showClock = true;
+    [ObservableProperty] private bool showBatteryPercentage = false;
+    [ObservableProperty] private bool showGameTitles = false;
+    [ObservableProperty] private bool darkenUninstalledGamesGrid = false;
+    [ObservableProperty] private bool enableMainBackgroundImage = false;
+    [ObservableProperty] private int mainBackgroundImageBlurAmount = 0;
+    [ObservableProperty] private float mainBackgroundImageDarkAmount = 30;
+    [ObservableProperty] private bool usePrimaryDisplay = false;
+    [ObservableProperty] private Guid selectedFilterPreset;
+    [ObservableProperty] private bool hideMouserCursor = false;
+    [ObservableProperty] private bool minimizeAfterGameStartup = true;
+    [ObservableProperty] private float interfaceVolume = 0.5f;
+    [ObservableProperty] private float musicVolume = 0.3f;
+    [ObservableProperty] private bool muteInBackground = true;
+    [ObservableProperty] private bool primaryControllerOnly = true;
+    [ObservableProperty] private bool guideButtonFocus = false;
+    [ObservableProperty] private ImageLoadScaling imageScalerMode = ImageLoadScaling.BitmapDotNet;
+    [ObservableProperty] private bool smoothScrolling = true;
+    [ObservableProperty] private int fullscreenItemSpacing = 20;
+    [ObservableProperty] private AspectRatio coverAspectRatio = new(3, 4);
+
+    [ObservableProperty] private bool mainMenuShowRestart = true;
+    [ObservableProperty] private bool mainMenuShowShutdown = true;
+    [ObservableProperty] private bool mainMenuShowSuspend = true;
+    [ObservableProperty] private bool mainMenuShowHibernate = true;
+    [ObservableProperty] private bool mainMenuShowMinimize = true;
+
+    [ObservableProperty][property: RequiresRestart] private double fontSize = 22;
+    [ObservableProperty][property: RequiresRestart] private double fontSizeSmall = 18;
+    [ObservableProperty][property: RequiresRestart] private bool asyncImageLoading = true;
+    [ObservableProperty][property: RequiresRestart] private string theme = Themes.DefaultFullscreenThemeId;
+
+    [ObservableProperty] private FullscreenFilterSettings filterSettings = new();
+    [ObservableProperty] private FullscreenViewSettings viewSettings = new();
+
+    [ObservableProperty][property: JsonIgnore] private bool isMusicMuted = false;
+    [JsonIgnore] public Thickness FullscreenItemSpacingMargin { get; private set; }
+
+    public FullscreenSettings()
+    {
+        OnFullscreenItemSpacingChanged(FullscreenItemSpacing);
+    }
+
+    partial void OnFullscreenItemSpacingChanged(int value)
+    {
+        double marginX = FullscreenItemSpacing / 2;
+        double marginY = CoverAspectRatio.GetWidth(FullscreenItemSpacing) / 2;
+        FullscreenItemSpacingMargin = new Thickness(marginY / 2, marginX / 2, marginY / 2, marginX / 2);
+        OnPropertyChanged(nameof(FullscreenItemSpacingMargin));
+    }
 }
 
 public partial class PlayniteSettings : ObservableObject
 {
+    private static readonly ILogger logger = LogManager.GetLogger();
+
+    public const int SettingsModelVersion = 11;
+    public const double MinGridItemWidth = 60;
+    public const double DefaultGridItemWidth = 200;
+    public const double MaxGridItemWidth = 700;
     internal static readonly string[] DefaultSortingNameRemovedArticles = new string[] { "The", "A", "An" };
 
-    [ObservableProperty] private DetailsVisibilitySettings detailsVisibility = new();
-    //[ObservableProperty] private MetadataDownloaderSettings metadataSettings;
+    public int Version { get; set; } = SettingsModelVersion;
 
     [ObservableProperty] private DefaultIconSourceOptions defaultIconSource = DefaultIconSourceOptions.General;
     [ObservableProperty] private DefaultCoverSourceOptions defaultCoverSource = DefaultCoverSourceOptions.General;
@@ -342,6 +585,13 @@ public partial class PlayniteSettings : ObservableObject
     [ObservableProperty] private string webImageSarchIconTerm = "{Name} icon";
     [ObservableProperty] private string webImageSarchCoverTerm = "{Name} cover";
     [ObservableProperty] private string webImageSarchBackgroundTerm = "{Name} wallpaper";
+    [ObservableProperty] private bool partialDescriptionLoading = true;
+    [ObservableProperty] private SearchWindowVisibilitySettings searchWindowVisibility = new();
+    [ObservableProperty] private DetailsVisibilitySettings detailsVisibility = new();
+    [ObservableProperty] private MetadataDownloaderSettings metadataSettings = MetadataDownloaderSettings.GetDefaultSettings();
+    [ObservableProperty] private ViewSettings viewSettings = new();
+    //[ObservableProperty] private FilterSettings filterSettings = new();
+    [ObservableProperty] private AgeRatingOrg ageRatingOrgPriority = AgeRatingOrg.PEGI;
 
     [ObservableProperty] private UpdateCheckFrequency checkForProgramUpdates = UpdateCheckFrequency.OnEveryStartup;
     [ObservableProperty] private UpdateCheckFrequency checkForAddonUpdates = UpdateCheckFrequency.OnEveryStartup;
@@ -352,8 +602,8 @@ public partial class PlayniteSettings : ObservableObject
     [ObservableProperty] private GameSearchItemAction secondaryGameSearchItemAction = GameSearchItemAction.Play;
     [ObservableProperty] private bool globalSearchOpenWithLegacySearch = true;
     [ObservableProperty] private bool saveGlobalSearchFilterSettings = true;
-    [ObservableProperty] private Dictionary<string, string> customSearchKeywrods = new ();
-    [ObservableProperty] private GameSearchFilterSettings gameSearchFilterSettings = new GameSearchFilterSettings();
+    [ObservableProperty] private Dictionary<string, string> customSearchKeywrods = new();
+    [ObservableProperty] private GameSearchFilterSettings gameSearchFilterSettings = new();
     [ObservableProperty] private HotKey? systemSearchHotkey;
     [ObservableProperty] private bool includeCommandsInDefaultSearch = true;
 
@@ -377,9 +627,7 @@ public partial class PlayniteSettings : ObservableObject
     [ObservableProperty][property: RequiresRestart] private string monospaceFontFamilyName = "Consolas";
     [ObservableProperty][property: RequiresRestart] private TextFormattingModeOptions textFormattingMode = TextFormattingModeOptions.Ideal;
     [ObservableProperty][property: RequiresRestart] private TextRenderingModeOptions textRenderingMode = TextRenderingModeOptions.Auto;
-
-    [JsonIgnore] public double CalculatedGameDetailsIndentation => IndentGameDetails ? GameDetailsIndentation : Double.NaN;
-    [JsonIgnore] public bool ShowMainMenuOnTopPanel => !ShowSidebar;
+    [ObservableProperty][property: RequiresRestart] private AccessibilityInterfaceOptions accessibilityInterface = AccessibilityInterfaceOptions.Auto;
 
     public string? InstallInstanceId { get; set; }
     public DateTime LastProgramUpdateCheck { get; set; }
@@ -387,4 +635,251 @@ public partial class PlayniteSettings : ObservableObject
     public DateTime LastLibraryUpdateCheck { get; set; }
     public DateTime LastEmuLibraryUpdateCheck { get; set; }
     public DateTime LastAutoBackup { get; set; }
+
+    [JsonIgnore] public double CalculatedGameDetailsIndentation => IndentGameDetails ? GameDetailsIndentation : Double.NaN;
+    [JsonIgnore] public bool ShowMainMenuOnTopPanel => !ShowSidebar;
+    [JsonIgnore] public List<WindowPosition> WindowPositions { get; private set; } = new();
+    [JsonIgnore] public FullscreenSettings Fullscreen { get; private set; } = new();
+    [JsonIgnore] public AspectRatio CoverAspectRatio { get; private set; } = new(3, 4);
+    [JsonIgnore] public Thickness GridItemSpacingMargin { get; private set; }
+    [JsonIgnore] public double GridItemHeight { get; private set; }
+
+    [ObservableProperty] private Stretch coverArtStretch = Stretch.UniformToFill;
+    [ObservableProperty] private double gridItemWidth = DefaultGridItemWidth;
+    [ObservableProperty] private int gridItemWidthRatio = 3;
+    [ObservableProperty] private int gridItemHeightRatio = 4;
+    [ObservableProperty] private int gridItemSpacing = 8;
+    [ObservableProperty] private int gridItemMargin = 2;
+
+    partial void OnGridItemWidthChanged(double value)
+    {
+        UpdateGridItemHeight();
+    }
+
+    partial void OnGridItemWidthRatioChanged(int value)
+    {
+        UpdateGridItemHeight();
+        CoverAspectRatio = new AspectRatio(GridItemWidthRatio, GridItemHeightRatio);
+        OnPropertyChanged(nameof(CoverAspectRatio));
+        Fullscreen.CoverAspectRatio = CoverAspectRatio;
+    }
+
+    partial void OnGridItemHeightRatioChanged(int value)
+    {
+        UpdateGridItemHeight();
+        CoverAspectRatio = new AspectRatio(GridItemWidthRatio, GridItemHeightRatio);
+        OnPropertyChanged(nameof(CoverAspectRatio));
+        Fullscreen.CoverAspectRatio = CoverAspectRatio;
+    }
+
+    partial void OnGridItemSpacingChanged(int value)
+    {
+        GridItemSpacingMargin = GetItemSpacingMargin();
+        OnPropertyChanged(nameof(GridItemSpacingMargin));
+    }
+
+    private Thickness GetItemSpacingMargin()
+    {
+        return new Thickness(GridItemSpacing / 2, GridItemSpacing / 2, GridItemSpacing / 2, GridItemSpacing / 2); ;
+    }
+
+    private void UpdateGridItemHeight()
+    {
+        if (GridItemWidth != 0)
+        {
+            GridItemHeight = Math.Round(GridItemWidth * ((double)GridItemHeightRatio / GridItemWidthRatio));
+        }
+        else
+        {
+            GridItemHeight = 0;
+        }
+
+        OnPropertyChanged(nameof(GridItemHeight));
+    }
+
+    public bool ShouldCheckProgramUpdatePeriodic()
+    {
+        return CheckForProgramUpdates switch
+        {
+            UpdateCheckFrequency.OnceADay => DateTimes.Now.Date != LastProgramUpdateCheck.Date,
+            UpdateCheckFrequency.OnceAWeek => (DateTimes.Now - LastProgramUpdateCheck).TotalDays > 6,
+            _ => false,
+        };
+    }
+
+    public bool ShouldCheckAddonUpdatePeriodic()
+    {
+        return CheckForAddonUpdates switch
+        {
+            UpdateCheckFrequency.OnceADay => DateTimes.Now.Date != LastAddonUpdateCheck.Date,
+            UpdateCheckFrequency.OnceAWeek => (DateTimes.Now - LastAddonUpdateCheck).TotalDays > 6,
+            _ => false,
+        };
+    }
+
+    public bool ShouldCheckProgramUpdateStartup()
+    {
+        return CheckForProgramUpdates switch
+        {
+            UpdateCheckFrequency.OnceADay => DateTimes.Now.Date != LastProgramUpdateCheck.Date,
+            UpdateCheckFrequency.OnceAWeek => (DateTimes.Now - LastProgramUpdateCheck).TotalDays > 6,
+            _ => true,
+        };
+    }
+
+    public bool ShouldCheckAddonUpdateStartup()
+    {
+        return CheckForAddonUpdates switch
+        {
+            UpdateCheckFrequency.OnceADay => DateTimes.Now.Date != LastAddonUpdateCheck.Date,
+            UpdateCheckFrequency.OnceAWeek => (DateTimes.Now - LastAddonUpdateCheck).TotalDays > 6,
+            _ => true,
+        };
+    }
+
+    public bool ShouldCheckLibraryOnStartup()
+    {
+        return CheckForLibraryUpdates switch
+        {
+            LibraryUpdateCheckFrequency.OnceADay => DateTimes.Now.Date != LastLibraryUpdateCheck.Date,
+            LibraryUpdateCheckFrequency.OnceAWeek => (DateTimes.Now - LastLibraryUpdateCheck).TotalDays > 6,
+            LibraryUpdateCheckFrequency.Manually => false,
+            _ => true,
+        };
+    }
+
+    public bool ShouldCheckEmuLibraryOnStartup()
+    {
+        return CheckForEmulatedLibraryUpdates switch
+        {
+            LibraryUpdateCheckFrequency.OnceADay => DateTimes.Now.Date != LastEmuLibraryUpdateCheck.Date,
+            LibraryUpdateCheckFrequency.OnceAWeek => (DateTimes.Now - LastEmuLibraryUpdateCheck).TotalDays > 6,
+            LibraryUpdateCheckFrequency.Manually => false,
+            _ => true,
+        };
+    }
+
+    public bool ShouldDataBackupOnStartup()
+    {
+        if (!AutoBackupEnabled)
+        {
+            return false;
+        }
+
+        return AutoBackupFrequency switch
+        {
+            AutoBackupFrequency.OnceADay => DateTimes.Now.Date != LastAutoBackup.Date,
+            AutoBackupFrequency.OnceAWeek => (DateTimes.Now - LastAutoBackup).TotalDays > 6,
+            _ => false,
+        };
+    }
+
+    public PlayniteSettings()
+    {
+        var gpus = Computer.GetGpuVendors();
+        if (gpus.Contains(HwCompany.Intel) || gpus.Contains(HwCompany.VMware))
+        {
+            BackgroundImageAnimation = false;
+        }
+
+        InstallInstanceId = Guid.NewGuid().ToString();
+        OnGridItemWidthRatioChanged(GridItemWidthRatio);
+        OnGridItemSpacingChanged(GridItemSpacing);
+    }
+
+    private static T? LoadSettingFile<T>(string path) where T : class
+    {
+        try
+        {
+            if (File.Exists(path))
+            {
+                return Serialization.FromJson<T>(File.ReadAllText(path));
+            }
+        }
+        catch (Exception e) when (!AppConfig.ThrowAllErrors)
+        {
+            logger.Error(e, $"Failed to load {path} setting file.");
+        }
+
+        return null;
+    }
+
+    private static void SaveSettingFile(object settings, string path)
+    {
+        FileSystem.WriteStringToFile(path, Serialization.ToJson(settings, true));
+    }
+
+    public static PlayniteSettings LoadSettings()
+    {
+        var settings = LoadSettingFile<PlayniteSettings>(PlaynitePaths.ConfigFile);
+        if (settings == null)
+        {
+            logger.Warn("No existing settings found.");
+            settings = LoadSettingFile<PlayniteSettings>(PlaynitePaths.BackupConfigFile);
+            if (settings == null)
+            {
+                logger.Warn("No settings backup found, creating default ones.");
+                settings = new PlayniteSettings();
+            }
+        }
+
+        if (settings.Version == 7)
+        {
+            // TODO: migration from P11
+        }
+
+        settings.Version = SettingsModelVersion;
+        settings.WindowPositions = LoadExternalConfig<List<WindowPosition>>(PlaynitePaths.WindowPositionsFile, PlaynitePaths.BackupWindowPositionsFile);
+        settings.Fullscreen = LoadExternalConfig<FullscreenSettings>(PlaynitePaths.FullscreenConfigFile, PlaynitePaths.BackupFullscreenConfigFile);
+        settings.BackupSettings();
+        return settings;
+    }
+
+    private static T LoadExternalConfig<T>(string origPath, string backupPath) where T : class, new()
+    {
+        var name = Path.GetFileName(origPath);
+        var config = LoadSettingFile<T>(origPath);
+        if (config is null)
+        {
+            logger.Warn($"No existing {name} settings found.");
+            config = LoadSettingFile<T>(backupPath);
+            if (config is null)
+            {
+                logger.Warn($"No {name} settings backup found, creating default ones.");
+                config = new T();
+            }
+        }
+
+        return config!;
+    }
+
+    public void SaveSettings()
+    {
+        try
+        {
+            FileSystem.CreateDirectory(PlaynitePaths.ConfigRootDir);
+            SaveSettingFile(this, PlaynitePaths.ConfigFile);
+            SaveSettingFile(WindowPositions, PlaynitePaths.WindowPositionsFile);
+            SaveSettingFile(Fullscreen, PlaynitePaths.FullscreenConfigFile);
+        }
+        catch (Exception e) when (!AppConfig.ThrowAllErrors)
+        {
+            logger.Error(e, "Failed to save application settings.");
+        }
+    }
+
+    public void BackupSettings()
+    {
+        try
+        {
+            FileSystem.CreateDirectory(PlaynitePaths.ConfigRootDir);
+            SaveSettingFile(this, PlaynitePaths.BackupConfigFile);
+            SaveSettingFile(WindowPositions, PlaynitePaths.BackupWindowPositionsFile);
+            SaveSettingFile(Fullscreen, PlaynitePaths.BackupFullscreenConfigFile);
+        }
+        catch (Exception e) when (!AppConfig.ThrowAllErrors)
+        {
+            logger.Error(e, "Failed to backup application settings.");
+        }
+    }
 }

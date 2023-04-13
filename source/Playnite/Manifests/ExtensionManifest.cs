@@ -21,15 +21,6 @@ namespace Playnite
 
     public class BaseExtensionManifest
     {
-        public string Id { get; set; }
-
-        public string Name { get; set; }
-
-        public string Author { get; set; }
-
-        public string Version { get; set; }
-
-        public List<Link> Links { get; set; }
 
         [YamlIgnore]
         public string DirectoryPath { get; set; }

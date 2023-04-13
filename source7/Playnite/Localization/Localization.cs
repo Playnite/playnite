@@ -1,6 +1,5 @@
 ﻿using Linguini.Bundle;
 using Linguini.Bundle.Builder;
-using Linguini.Bundle.Errors;
 using Linguini.Shared.Types.Bundle;
 using System.Globalization;
 using System.IO;
@@ -102,7 +101,7 @@ public static partial class Loc
 
     public static bool IsStringId(string id)
     {
-        return stringIds.Contains(id);
+        return LocId.StringIds.Contains(id);
     }
 }
 
@@ -117,58 +116,45 @@ public static class Localization
 
     public static List<PlayniteLanguage> GetLanguageList()
     {
-        var coverage = Serialization.FromJsonFile<Dictionary<string, int>>(PlaynitePaths.LocalizationsStatusFile);
-        var langs = new List<PlayniteLanguage> { new PlayniteLanguage("English", DefaultLanguageId, 100) };
-
-        if (!Directory.Exists(PlaynitePaths.LocalizationsDir))
+        var langs = new List<PlayniteLanguage>();
+        var coverage = new Dictionary<string, int>();
+        if (File.Exists(PlaynitePaths.LocalizationsStatusFile))
         {
-            return langs;
+            coverage = Serialization.FromJsonFile<Dictionary<string, int>>(PlaynitePaths.LocalizationsStatusFile) ?? coverage;
+            coverage.Add("en", 100);
         }
 
-        throw new NotImplementedException();
+        foreach (var lngFile in Directory.GetFiles(PlaynitePaths.LocalizationsDir, "*.ftl"))
+        {
+            var fileCode = Path.GetFileNameWithoutExtension(lngFile);
+            if (!coverage.TryGetValue(fileCode.Replace('_', '-'), out var lngCov))
+            {
+                coverage.TryGetValue(fileCode.Split('_')[0], out lngCov);
+            }
 
-        //foreach (var file in Directory.GetFiles(PlaynitePaths.LocalizationsDir, "*.ftl"))
-        //{
-        //    if (!Regex.IsMatch(file, "[a-zA-Z]+_[a-zA-Z]+"))
-        //    {
-        //        continue;
-        //    }
+            string? localeString = null;
+            try
+            {
+                foreach (var line in File.ReadLines(lngFile, Encoding.UTF8))
+                {
+                    if (line.StartsWith("language-name", StringComparison.Ordinal))
+                    {
+                        localeString = line[(line.LastIndexOf('=') + 1)..].Trim();
+                        break;
+                    }
+                }
+            }
+            catch (Exception e) when (!AppConfig.ThrowAllErrors)
+            {
+                logger.Error(e, $"Failed to parse localization file {lngFile}");
+                continue;
+            }
 
-        //    var fileCode = Path.GetFileNameWithoutExtension(file);
-        //    if (!coverage.TryGetValue(fileCode.Replace('_', '-'), out var lngCov))
-        //    {
-        //        coverage.TryGetValue(fileCode.Split('_')[0], out lngCov);
-        //    }
+            langs.Add(new PlayniteLanguage(localeString ?? fileCode, fileCode, lngCov));
+        }
 
-        //    var langPath = Path.Combine(path, file);
-        //    var localeString = "";
-        //    try
-        //    {
-        //        foreach (var line in File.ReadLines(langPath, Encoding.UTF8))
-        //        {
-        //            var match = Regex.Match(line, @"LanguageName""\>(.+)\<");
-        //            if (match.Success)
-        //            {
-        //                localeString = match.Groups[1].Value;
-        //                break;
-        //            }
-        //        }
-        //    }
-        //    catch (Exception e) when (!PlayniteEnvironment.ThrowAllErrors)
-        //    {
-        //        logger.Error(e, $"Failed to parse localization file {file}");
-        //        continue;
-        //    }
-
-        //    langs.Add(new PlayniteLanguage()
-        //    {
-        //        Id = Path.GetFileNameWithoutExtension(langPath),
-        //        LocaleString = localeString,
-        //        TranslatedPercentage = lngCov
-        //    });
-        //}
-
-        //return langs.OrderBy(a => a.LocaleString).ToList();
+        langs.Sort((x, y) => string.Compare(x.LocaleString, y.LocaleString, StringComparison.InvariantCulture));
+        return langs;
     }
 
     public static void SetLanguage(string languageId, bool fallbackToDefault)

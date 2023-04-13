@@ -34,6 +34,10 @@ public class TestDateTimes : DateTimes.IDateTimes
     public DateTime Now { get; set; }
     public DateTime Today { get; set; }
 
+    public TestDateTimes()
+    {
+    }
+
     public TestDateTimes(DateTime now)
     {
         Now = now;

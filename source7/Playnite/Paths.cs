@@ -219,7 +219,7 @@ public class Paths
         }
     }
 
-    public static string FormatLongPath(string path, bool forcePrefix = false)
+    public static string FormatAsLongPath(string path, bool forcePrefix = false)
     {
         if (path.IsNullOrWhiteSpace())
         {

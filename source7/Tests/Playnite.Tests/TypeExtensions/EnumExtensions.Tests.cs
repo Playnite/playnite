@@ -2,7 +2,7 @@
 
 public enum TestEnum
 {
-    [System.ComponentModel.Description(Loc.dock_left_id)]
+    [System.ComponentModel.Description(LocId.dock_left)]
     Test1,
     Test2
 }

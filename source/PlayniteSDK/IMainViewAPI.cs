@@ -10,24 +10,7 @@ using System.Windows.Threading;
 
 namespace Playnite.SDK
 {
-    /// <summary>
-    ///
-    /// </summary>
-    public enum DesktopView : int
-    {
-        /// <summary>
-        ///
-        /// </summary>
-        [Description("LOCDetailsViewLabel")] Details = 0,
-        /// <summary>
-        ///
-        /// </summary>
-        [Description("LOCGridViewLabel")] Grid = 1,
-        /// <summary>
-        ///
-        /// </summary>
-        [Description("LOCListViewLabel")] List = 2
-    }
+
 
     /// <summary>
     /// Describes object providing API for main UI view.

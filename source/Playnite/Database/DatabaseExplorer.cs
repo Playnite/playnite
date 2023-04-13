@@ -14,59 +14,7 @@ using System.Windows.Controls;
 
 namespace Playnite.Database
 {
-    public enum ExplorerField
-    {
-        [Description(LOC.SettingsTopPanelFilterPresetsItem)]
-        Presets,
-        [Description(LOC.PlatformTitle)]
-        Platform,
-        [Description(LOC.GameProviderTitle)]
-        Library,
-        [Description(LOC.CategoryLabel)]
-        Category,
-        [Description(LOC.GameLastActivityTitle)]
-        LastActivity,
-        [Description(LOC.RecentActivityLabel)]
-        RecentActivity,
-        [Description(LOC.GenreLabel)]
-        Genre,
-        [Description(LOC.GameReleaseYearTitle)]
-        ReleaseYear,
-        [Description(LOC.DeveloperLabel)]
-        Developer,
-        [Description(LOC.PublisherLabel)]
-        Publisher,
-        [Description(LOC.TagLabel)]
-        Tag,
-        [Description(LOC.SeriesLabel)]
-        Series,
-        [Description(LOC.AgeRatingLabel)]
-        AgeRating,
-        [Description(LOC.RegionLabel)]
-        Region,
-        [Description(LOC.SourceLabel)]
-        Source,
-        [Description(LOC.TimePlayed)]
-        PlayTime,
-        [Description(LOC.InstallSizeLabel)]
-        InstallSize,
-        [Description(LOC.CompletionStatus)]
-        CompletionStatus,
-        [Description(LOC.UserScore)]
-        UserScore,
-        [Description(LOC.CriticScore)]
-        CriticScore,
-        [Description(LOC.CommunityScore)]
-        CommunityScore,
-        [Description(LOC.DateAddedLabel)]
-        Added,
-        [Description(LOC.DateModifiedLabel)]
-        Modified,
-        [Description(LOC.FeatureLabel)]
-        Feature,
-        [Description(LOC.GameNameTitle)]
-        Name
-    }
+    
 
     // TODO: Rewrite this mess.
     public class DatabaseExplorer : ObservableObject

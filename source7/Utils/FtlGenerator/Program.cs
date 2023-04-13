@@ -68,22 +68,11 @@ internal class Program
 
         var sb = new StringBuilder();
         sb.AppendLine($$"""
-            using Linguini.Shared.Types.Bundle;
             namespace Playnite;
 
             public static partial class Loc
             {
-                private static readonly HashSet<string> stringIds = new()
-                {
-                    {{string.Join(", \r\n        ", strings.Keys.Select(a => $"\"{a}\""))}}
-                };
             """);
-
-        sb.AppendLine();
-        foreach (var str in strings.Keys)
-        {
-            sb.AppendLine($"    public const string {str.Replace('-', '_')}_id = \"{str}\";");
-        }
 
         sb.AppendLine();
         foreach (var str in strings.Keys)
@@ -111,5 +100,26 @@ internal class Program
 
         sb.AppendLine("}");
         File.WriteAllText(@"c:\Devel\Playnite\source7\Playnite\Localization\Localization.generated.cs", sb.ToString());
+
+        sb.Clear();
+        sb.AppendLine($$"""
+            namespace Playnite;
+
+            internal static partial class LocId
+            {
+                public static readonly HashSet<string> StringIds = new()
+                {
+                    {{string.Join(", \r\n        ", strings.Keys.Select(a => $"\"{a}\""))}}
+                };
+            """);
+
+        sb.AppendLine();
+        foreach (var str in strings.Keys)
+        {
+            sb.AppendLine($"    public const string {str.Replace('-', '_')} = \"{str}\";");
+        }
+
+        sb.AppendLine("}");
+        File.WriteAllText(@"c:\Devel\Playnite\source7\PlayniteSDK\Localization.generated.cs", sb.ToString());
     }
 }

@@ -391,7 +391,7 @@ namespace Playnite
             }
 
             uint clusterSize = sectorsPerCluster * bytesPerSector;
-            uint losize = Kernel32.GetCompressedFileSize(Paths.FormatLongPath(fileInfo.FullName), out uint hosize);
+            uint losize = Kernel32.GetCompressedFileSize(Paths.FormatAsLongPath(fileInfo.FullName), out uint hosize);
             int error = Marshal.GetLastWin32Error();
             if (losize == 0xFFFFFFFF && error != 0)
             {
