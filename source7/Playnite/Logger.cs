@@ -129,14 +129,14 @@ public class LogManager
                 FileName = loggerFile,
                 Layout = "${date:format=dd-MM HH\\:mm\\:ss.fff}|${level:uppercase=true:padding=-5}|${logger}:${message}${onexception:${newline}${exception:format=toString}}",
                 KeepFileOpen = true,
-                ArchiveFileName = Path.Combine(PlaynitePaths.ConfigRootDir, $"{fileName}.{{#####}}.log"),
+                ArchiveFileName = Path.ChangeExtension(loggerFile, ".{#####}.log"),
                 ArchiveAboveSize = 4_096_000,
                 ArchiveNumbering = ArchiveNumberingMode.Sequence,
                 MaxArchiveFiles = 2,
                 Encoding = Encoding.UTF8
             };
 
-            config.LoggingRules.Add(new LoggingRule("*", NLog.LogLevel.Trace, fileTarget));
+            config.LoggingRules.Add(new LoggingRule("*", LogLevel.Trace, fileTarget));
 
 #if DEBUG
             var consoleTarget = new ColoredConsoleTarget
@@ -145,7 +145,15 @@ public class LogManager
                 Layout = @"${level:uppercase=true:padding=-5}|${logger}:${message}${onexception:${newline}${exception}}"
             };
 
-            config.LoggingRules.Add(new LoggingRule("*", NLog.LogLevel.Trace, consoleTarget));
+            config.LoggingRules.Add(new LoggingRule("*", LogLevel.Trace, consoleTarget));
+
+            var debugTarget = new DebuggerTarget
+            {
+                Layout = @"${level:uppercase=true:padding=-5}|${message}${onexception:${newline}${exception}}"
+            };
+
+            //config.AddTarget("debug", debugTarget);
+            config.LoggingRules.Add(new LoggingRule("*", LogLevel.Debug, debugTarget));
 #endif
 
             logFactory = new LogFactory();

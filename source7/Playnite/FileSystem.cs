@@ -369,37 +369,44 @@ namespace Playnite
 
         public static long GetFileSizeOnDisk(FileInfo fileInfo)
         {
-            // Method will fail if file is a symlink that has a target
-            // that does not exist. To avoid, we can check its lenght before continuing
-            if (fileInfo.Length == 0)
+            if (OperatingSystem.IsLinux())
             {
-                return 0;
+                throw new NotImplementedException("GetFileSizeOnDisk not implemented on Linux");
             }
-
-            // Method will fail when checking a file that's not valid on Windows,
-            // for example files used by Proton containing a colon (:).
-            // 'Directory' will be null when encountering such a file.
-            if (fileInfo.Directory is null)
+            else
             {
-                return 0;
-            }
+                // Method will fail if file is a symlink that has a target
+                // that does not exist. To avoid, we can check its lenght before continuing
+                if (fileInfo.Length == 0)
+                {
+                    return 0;
+                }
 
-            // From https://stackoverflow.com/a/3751135
-            if (!Kernel32.GetDiskFreeSpace(fileInfo.Directory!.Root.FullName, out var sectorsPerCluster, out var bytesPerSector, out var _, out var _))
-            {
-                Win32Error.GetLastError().ThrowIfFailed();
-            }
+                // Method will fail when checking a file that's not valid on Windows,
+                // for example files used by Proton containing a colon (:).
+                // 'Directory' will be null when encountering such a file.
+                if (fileInfo.Directory is null)
+                {
+                    return 0;
+                }
 
-            uint clusterSize = sectorsPerCluster * bytesPerSector;
-            uint losize = Kernel32.GetCompressedFileSize(Paths.FormatAsLongPath(fileInfo.FullName), out uint hosize);
-            int error = Marshal.GetLastWin32Error();
-            if (losize == 0xFFFFFFFF && error != 0)
-            {
-                throw new System.ComponentModel.Win32Exception(error);
-            }
+                // From https://stackoverflow.com/a/3751135
+                if (!Kernel32.GetDiskFreeSpace(fileInfo.Directory!.Root.FullName, out var sectorsPerCluster, out var bytesPerSector, out var _, out var _))
+                {
+                    Win32Error.GetLastError().ThrowIfFailed();
+                }
 
-            var size = (long)hosize << 32 | losize;
-            return ((size + clusterSize - 1) / clusterSize) * clusterSize;
+                uint clusterSize = sectorsPerCluster * bytesPerSector;
+                uint losize = Kernel32.GetCompressedFileSize(Paths.FormatAsLongPath(fileInfo.FullName), out uint hosize);
+                int error = Marshal.GetLastWin32Error();
+                if (losize == 0xFFFFFFFF && error != 0)
+                {
+                    throw new System.ComponentModel.Win32Exception(error);
+                }
+
+                var size = (long)hosize << 32 | losize;
+                return ((size + clusterSize - 1) / clusterSize) * clusterSize;
+            }
         }
 
         private static bool IsDirectorySubdirSafeToRecurse(DirectoryInfo childDirectory)

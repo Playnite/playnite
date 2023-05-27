@@ -15,35 +15,42 @@ public class Paths
 
     public static string GetFinalPathName(string path)
     {
-        if (path.StartsWith(@"\\", StringComparison.Ordinal))
+        if (OperatingSystem.IsLinux())
         {
-            return path;
-        }
-
-        using var file = Kernel32.CreateFile(
-            path,
-            0,
-            FileShare.ReadWrite | FileShare.Delete,
-            null,
-            FileMode.Open,
-            FileFlagsAndAttributes.FILE_FLAG_BACKUP_SEMANTICS,
-            IntPtr.Zero);
-
-        var sb = new StringBuilder(Paths.MaxPathLength);
-        var res = Kernel32.GetFinalPathNameByHandle(file, sb, (uint)sb.Capacity, Kernel32.FinalPathNameOptions.FILE_NAME_NORMALIZED);
-        if (res == 0)
-        {
-            Win32Error.GetLastError().ThrowIfFailed();
-        }
-
-        var targetPath = sb.ToString();
-        if (targetPath.StartsWith(longPathUncPrefix, StringComparison.Ordinal))
-        {
-            return targetPath.Replace(longPathUncPrefix, @"\\", StringComparison.Ordinal);
+            throw new NotImplementedException("GetFinalPathName not implemented on Linux");
         }
         else
         {
-            return targetPath.Replace(longPathPrefix, string.Empty, StringComparison.Ordinal);
+            if (path.StartsWith(@"\\", StringComparison.Ordinal))
+            {
+                return path;
+            }
+
+            using var file = Kernel32.CreateFile(
+                path,
+                0,
+                FileShare.ReadWrite | FileShare.Delete,
+                null,
+                FileMode.Open,
+                FileFlagsAndAttributes.FILE_FLAG_BACKUP_SEMANTICS,
+                IntPtr.Zero);
+
+            var sb = new StringBuilder(Paths.MaxPathLength);
+            var res = Kernel32.GetFinalPathNameByHandle(file, sb, (uint)sb.Capacity, Kernel32.FinalPathNameOptions.FILE_NAME_NORMALIZED);
+            if (res == 0)
+            {
+                Win32Error.GetLastError().ThrowIfFailed();
+            }
+
+            var targetPath = sb.ToString();
+            if (targetPath.StartsWith(longPathUncPrefix, StringComparison.Ordinal))
+            {
+                return targetPath.Replace(longPathUncPrefix, @"\\", StringComparison.Ordinal);
+            }
+            else
+            {
+                return targetPath.Replace(longPathPrefix, string.Empty, StringComparison.Ordinal);
+            }
         }
     }
 
@@ -204,18 +211,25 @@ public class Paths
 
     public static bool MathcesFilePattern(string filePath, string pattern)
     {
-        if (filePath.IsNullOrEmpty() || pattern.IsNullOrEmpty())
+        if (OperatingSystem.IsLinux())
         {
-            return false;
-        }
-
-        if (pattern.Contains(';', StringComparison.Ordinal))
-        {
-            return ShlwApi.PathMatchSpecEx(filePath, pattern, ShlwApi.PMSF.PMSF_MULTIPLE) == 0;
+            throw new NotImplementedException("MathcesFilePattern not implemented on Linux");
         }
         else
         {
-            return ShlwApi.PathMatchSpecEx(filePath, pattern, ShlwApi.PMSF.PMSF_NORMAL) == 0;
+            if (filePath.IsNullOrEmpty() || pattern.IsNullOrEmpty())
+            {
+                return false;
+            }
+
+            if (pattern.Contains(';', StringComparison.Ordinal))
+            {
+                return ShlwApi.PathMatchSpecEx(filePath, pattern, ShlwApi.PMSF.PMSF_MULTIPLE) == 0;
+            }
+            else
+            {
+                return ShlwApi.PathMatchSpecEx(filePath, pattern, ShlwApi.PMSF.PMSF_NORMAL) == 0;
+            }
         }
     }
 
