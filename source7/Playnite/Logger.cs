@@ -146,14 +146,6 @@ public class LogManager
             };
 
             config.LoggingRules.Add(new LoggingRule("*", LogLevel.Trace, consoleTarget));
-
-            var debugTarget = new DebuggerTarget
-            {
-                Layout = @"${level:uppercase=true:padding=-5}|${message}${onexception:${newline}${exception}}"
-            };
-
-            //config.AddTarget("debug", debugTarget);
-            config.LoggingRules.Add(new LoggingRule("*", LogLevel.Debug, debugTarget));
 #endif
 
             logFactory = new LogFactory();
